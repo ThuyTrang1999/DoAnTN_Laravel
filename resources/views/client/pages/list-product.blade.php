@@ -102,12 +102,12 @@ Trang danh sách
                                                                 data-target="#exampleModalCenter"><i
                                                                     class="fa fa-eye"></i></a></li>
 
-
-                                                    </ul>
-                                                    <div class="add-cart active "><a href="#"><i
+                                                                    <li class="add-cart active "><a href="#"><i
                                                                 class="fa fa-cart-arrow-down fa-7x"
                                                                 aria-hidden="true"></i></a>
-                                                    </div>
+                                                    </li>
+                                                    </ul>
+                                                    
                                                 </div>
                                             </div>
                                         </div>

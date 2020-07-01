@@ -1,89 +1,44 @@
 .single-product-wrap:hover{
     padding: 0 !important;
     margin: 0 !important;
+    -webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 6px 0px rgba(158, 158, 158, 0.51);
+}
+.single-product-wrap:hover .add-actions.action__overplay{
+   
+left: 0;
 }
 
 .add-actions.action__overplay {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: -30px;
+    width: 25%;
     border: 0;
-    background: rgba(24, 23, 23, 0.24);
 }
 
 .single-product-wrap:hover:before{
     visibility: hidden;
 }
 
-.action__overplay .add-cart i{
-    font-size: 27px !important; 
-    color: #ffffff ;
-    line-height: 35px !important;
-   
-}
-
-.action__overplay .add-cart:hover i{
-    font-size: 27px !important;
-    color:white;
-    line-height: 35px !important;
-}
-.action__overplay .add-actions-link li.add-cart{
-    
-    background: transparent !important;
-    border: 1px solid white;
-    margin: 5px !important;
-   bottom: 0;
-}
-
-
-.featured-product-action.action__overplay .add-actions-link li.add-cart{
-    width: 60px !important;
-    height: 60px !important;
-    padding: 0 !important;
-    top: 30%;
-    transition: all .5s;
-}
-.featured-product-action.action__overplay .add-actions-link li.add-cart:hover{
-    padding: 5px !important;
-    width: 70px !important;
-    height: 70px !important;
-}
-.featured-product-action.action__overplay .add-actions-link li.add-cart i{
+.add-actions-link li.add-cart > a i{
     padding: 10px;
-}
-
-.action__overplay .add-actions-link li.add-cart:hover{
-    background: #0C3EDE  !important;
-    border: 2px solid #ffffff;
-}
-.action__overplay .add-actions-link {
-    padding-top: 9rem !important;
-    position: absolute;
-    left: 0;
-    bottom: 4%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.add-cart.active{
-    position: absolute;
-    bottom: 40%;
-    left: 35%;
-    border: 2px solid white;
-    padding: 15px 20px;
     border-radius: 50%;
-    transition: all .5s;
+    border: 2px solid #ffffff;
+    transition: all 1s;
+    background: #0a4b8ff2;
 }
 
-.add-cart.active:hover{
-    background: #0c3ee0;
-    padding: 20px 25px;
-    left: 33%;
+.add-actions-link li.add-cart > a i:hover {
+    font-size: 22px;
+    line-height: 22px;
+    /* color: blue; */
+    padding: 15px;
 }
-.add-cart.active:hover i{  
-    color: white;
-    
+
+.add-actions-link li.add-cart > a:hover i {
+   background-color: #0f3965f2;
 }
 
 /* shop */

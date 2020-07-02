@@ -30,7 +30,7 @@ Danh sách sản phẩm
                                 class="dataTables_wrapper container-fluid dt-bootstrap no-footer">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                    <a href="{{route('product.them-moi')}}" class="btn bg_btnAdd">Add vendor &nbsp;<i class="fa fa-plus" aria-hidden="true"></i></a>
+                                    <a href="{{route('product.them-moi')}}" class="btn bg_btnAdd">Add product &nbsp;<i class="fa fa-plus" aria-hidden="true"></i></a>
                                     </div>
                                     <div class="col-sm-6">
 

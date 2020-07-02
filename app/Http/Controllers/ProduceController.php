@@ -8,6 +8,7 @@ use App\category;
 use App\img;
 use App\user;
 use App\produce;
+use App\post;
 class ProduceController extends Controller
 {
      /**
@@ -55,6 +56,7 @@ class ProduceController extends Controller
        
         $listProduce = new produce ;
         $listImg = new img ; 
+
         $this->validate($request, 
 			[
 				//Kiểm tra đúng file đuôi .jpg,.jpeg,.png.gif và dung lượng không quá 2M
@@ -65,30 +67,22 @@ class ProduceController extends Controller
 				'imgFile.mimes' => 'Chỉ chấp nhận hình thẻ với đuôi .jpg .jpeg .png .gif',
 				'imgFile.max' => 'Hình thẻ giới hạn dung lượng không quá 2M',
 			]
-		);
-        if ($request->file('imgFile')->isValid()) {
+        );
+        $get_product = $request->file('imgFile');
+        if ($get_product->isValid()) {
 
            
         
         $imageName = time().'.'.$request->file('imgFile')->getClientOriginalExtension();
 
-        $request->imgFile->move(public_path('upload'), $imageName);
+        $request->imgFile->move('upload', $imageName);
 
-        $file = $request->file('imgFile')->move(public_path('upload'),'firtupload.jpg' );
+        
 
-       //if($request->hasFile('imgFile'))
-        //{
-            //lưu file
-            //$file
-        $listImg ->url = 'public/upload/' . $imageName;
-       // }
-        //else
-        //{
-        //    echo "Chưa có file";
-        //}
+      
+        
 
 
-             
         $listProduce->name = $request->name;
         $listProduce->unit = $request->unit;
         $listProduce->SKU = $request->SKU;
@@ -101,11 +95,23 @@ class ProduceController extends Controller
         $listProduce->status = $request->status;
         $listProduce->top ="0";
         $listProduce->save();
+
+
+
+
+        $listImg ->url = 'upload/' . $imageName;
+        $listImg->status = $request->status;
+        $listImg->style = '1';
+        $listImg->produce_id= $listProduce->id;
+        $listImg->user_id= $request->author_id;
+        $listImg->post_id='1';
+        
+        $listImg ->save();
         return redirect()->route('product.listProduct');
         }
         else 
         {
-            return redirect()->route('product.listProduct');
+            return alert('THêm Không thành công ');
         }
     }
 

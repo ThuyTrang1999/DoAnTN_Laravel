@@ -23,7 +23,7 @@ thêm mới user
                         <div class="form-group row col-md-6 col-sm-6">
                             <label class="control-label col-md-2 col-sm-2 ">Username</label>
                             <div class="col-md-10 col-sm-10 ">
-                                <input type="text" name="user_name" class="form-control" placeholder="Username....." @if(isset($addUser)) value ="{{ $addUser->user_name }}" @endif>
+                                <input type="text" name="user_name"  class="form-control" placeholder="Username....." @if(isset($addUser)) value ="{{ $addUser->user_name }}" readonly="readonly" @endif>
                             </div>
                         </div>
                         <div class="form-group row col-md-6 col-sm-6">

@@ -7,8 +7,8 @@
         </li>
         <li class="has-sub"><a >Quản lý sản phẩm</a>
             <ul>
-                <li><a href="{{route('shop.list-product')}}">Danh sách sản phẩm</a></li>
-                <li><a href="{{route('shop.product')}}">Thêm sản phẩm</a></li>
+                <li><a href="{{route('shopProduct.listShopProduct')}}">Danh sách sản phẩm</a></li>
+                <li><a href="{{route('shopProduct.them-moi-shop-product')}}">Thêm sản phẩm</a></li>
             </ul>
         </li>
         <li class="has-sub"><a>Kênh quảng cáo</a>

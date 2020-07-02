@@ -68,17 +68,19 @@ Home shop
     </div>
     <div class="seller_content">
         <div class="row">
+        @foreach($listPost as $lpost)
             <div class="col-md-12 col-sm-12 ">
                 <a href="#">
-                    <h6 class="vendor_title">Nhà cửa đời sống - DEAL SHOCK 300k (giá gốc từ 430k) -Từ 0h-23h59 ngày 23/06_HN</h6>
+                    <h6 class="vendor_title">{{$lpost ->title}}</h6>
                     <div class="verdor_content">
-                        <span>Thời gian diễn ra: 00:00 23-06-2020 ～ 23:59 23-06-2020</span>
-                        <span>Thời gian đăng kí đã kết thúc.</span>
+                    <p>{{$lpost ->short_desc}}</p>
+                        <span>{{$lpost ->desc}}</span>
+                        <p>Thời gian đăng kí đã kết thúc.</p>
                     </div>
                 </a>
             </div>
-            <div class="col-md-12 col-sm-12 ">2</div>
-            <div class="col-md-12 col-sm-12 ">3</div>
+
+            @endforeach
         </div>
         
     </div>

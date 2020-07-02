@@ -2312,6 +2312,7 @@ ul.ht-menu a:hover {
 	transition: all 0.3s ease-in-out;
 	/* width: 120px; */
 	margin-bottom: 28px;
+	padding-right: 20px;
 }
 .add-actions-link li:hover {
 	/* background: #0c3ee0  !important; */

@@ -11,7 +11,9 @@
                                 </div>
                                 <div id="cate-toggle" class="category-menu-list">
                                     <ul>
-                                        <li class="right-menu"><a href="shop-left-sidebar.html">Laptops</a>
+
+                                        @foreach ($Category as $cate)
+                                        <li class="right-menu"><a href="shop-left-sidebar.html">{{ $cate -> name}}</a>
                                             <ul class="cat-mega-menu">
                                                 <li class="right-menu cat-mega-title">
                                                    <a href="shop-left-sidebar.html">Prime Video</a>
@@ -52,76 +54,8 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li class="right-menu"><a href="shop-left-sidebar.html">TV & Audio</a>
-                                            <ul class="cat-mega-menu">
-                                                <li class="right-menu cat-mega-title">
-                                                   <a href="shop-left-sidebar.html">Chamcham</a>
-                                                    <ul>
-                                                        <li><a href="#">Office</a></li>
-                                                        <li><a href="#">Gaming</a></li>
-                                                        <li><a href="#">Chromebook</a></li>
-                                                        <li><a href="#">Refurbished</a></li>
-                                                        <li><a href="#">Touchscreen</a></li>
-                                                        <li><a href="#">Ultrabooks</a></li>
-                                                        <li><a href="#">Netbook</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="right-menu cat-mega-title">
-                                                   <a href="shop-left-sidebar.html">Sanai</a>
-                                                    <ul>
-                                                        <li><a href="#">Hard Drives</a></li>
-                                                        <li><a href="#">Graphic Cards</a></li>
-                                                        <li><a href="#">Processors (CPU)</a></li>
-                                                        <li><a href="#">Memory</a></li>
-                                                        <li><a href="#">Motherboards</a></li>
-                                                        <li><a href="#">Fans & Cooling</a></li>
-                                                        <li><a href="#">CD/DVD Drives</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="right-menu cat-mega-title">
-                                                   <a href="shop-left-sidebar.html">Meito</a>
-                                                    <ul>
-                                                        <li><a href="#">Sound Cards</a></li>
-                                                        <li><a href="#">Cases & Towers</a></li>
-                                                        <li><a href="#">Casual Dresses</a></li>
-                                                        <li><a href="#">Evening Dresses</a></li>
-                                                        <li><a href="#">T-shirts</a></li>
-                                                        <li><a href="#">Tops</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="right-menu"><a href="shop-left-sidebar.html">Smartphone</a>
-                                            <ul class="cat-mega-menu cat-mega-menu-2">
-                                                <li class="right-menu cat-mega-title">
-                                                   <a href="shop-left-sidebar.html">Camera Accessories</a>
-                                                    <ul>
-                                                        <li><a href="#">Octa Core</a></li>
-                                                        <li><a href="#">Quad Core</a></li>
-                                                        <li><a href="#">Dual Core</a></li>
-                                                        <li><a href="#">7.0 Screen</a></li>
-                                                        <li><a href="#">9.0 Screen</a></li>
-                                                        <li><a href="#">Bags & Cases</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="right-menu cat-mega-title">
-                                                   <a href="shop-left-sidebar.html">Meito</a>
-                                                    <ul>
-                                                        <li><a href="#">Batteries</a></li>
-                                                        <li><a href="#">Microphones</a></li>
-                                                        <li><a href="#">Stabilizers</a></li>
-                                                        <li><a href="#">Video Tapes</a></li>
-                                                        <li><a href="#">Memory Card Readers</a></li>
-                                                        <li><a href="#">Tripods</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">Cameras</a></li>
-                                        <li><a href="#">Headphone</a></li>
-                                        <li><a href="#">Smartwatch</a></li>
-                                        <li><a href="#">Out Door Room</a></li>
-                                        <li><a href="#">Chamcham</a></li>
+                                        @endforeach
+
                                         <li class="rx-child"><a href="#">Mobile & Tablets</a></li>
                                         <li class="rx-child"><a href="#">Accessories</a></li>
                                         <li class="rx-parent">

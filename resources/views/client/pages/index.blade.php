@@ -61,19 +61,22 @@ Home
                                         </div>
                                     </div>
                                     <div class="add-actions action__overplay">
-                                        <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
-                                                        class="fa fa-heart"></i></a></li>
-                                            <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
-                                                    data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                        class="fa fa-eye"></i></a></li>
+                                                    <ul class="add-actions-link">
+                                                        <li class="add-cart heart"><a class="links-details "
+                                                                href="wishlist.html"><i class="fa fa-heart"></i></a>
+                                                        </li>
+                                                        <li class="add-cart "><a href="#" title="quick view"
+                                                                class="quick-view-btn" data-toggle="modal"
+                                                                data-target="#exampleModalCenter"><i
+                                                                    class="fa fa-eye"></i></a></li>
 
+                                                        <li class="add-cart active "><a href="#"><i
+                                                                    class="fa fa-cart-arrow-down fa-7x"
+                                                                    aria-hidden="true"></i></a>
+                                                        </li>
+                                                    </ul>
 
-                                        </ul>
-                                        <div class="add-cart active "><a href="#"><i class="fa fa-cart-arrow-down fa-7x"
-                                                    aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
+                                                </div>
                                 </div>
                             </div>
                             <!-- single-product-wrap wow fadeInLeft end -->
@@ -150,14 +153,14 @@ Home
                             <div class="item featured-product-item">
                                 <div class="featured-pro-wrapper  mb-sm-25">
                                     <div class="product-img">
-                                        <a href="product-details.html">
+                                        <a href="{{route('client.detail')}}">
                                             <img alt="" src="{{asset($pTop->url) }}">
                                         </a>
                                     </div>
                                     <div class="featured-pro-content">
                                         <div class="product-review">
                                             <h5 class="manufacturer">
-                                                <a href="shop-left-sidebar.html">{{$pTop->name}}</a>
+                                                <a href="{{route('client.detail')}}">{{$pTop->name}}</a>
                                             </h5>
                                         </div>
                                         <div class="rating-box">
@@ -169,7 +172,7 @@ Home
                                                 <li class="no-star"><i class="fa fa-star"></i></li>
                                             </ul>
                                         </div>
-                                        <h4><a class="featured-product-name" href="single-product.html">Mug Today is a
+                                        <h4><a class="featured-product-name" href="{{route('client.detail')}}">Mug Today is a
                                                 good day</a></h4>
                                         <div class="featured-price-box">
                                             <span class="new-price new-price-2">{{$pTop->discout_price}}</span>
@@ -177,16 +180,20 @@ Home
                                             <span class="discount-percentage">-7%</span>
                                         </div>
                                         <div class="featured-product-action action__overplay">
-                                            <ul class="add-actions-link">
-                                                <li class="add-cart active"><a href="#"><i
-                                                            class="fa fa-cart-arrow-down fa-7x"
-                                                            aria-hidden="true"></i></a></li>
-                                                <li><a class="links-details" href="single-product.html"><i
-                                                            class="fa fa-heart"></i></a></li>
-                                                <li><a class="quick-view" data-toggle="modal"
-                                                        data-target="#exampleModalCenter" href="#"><i
-                                                            class="fa fa-eye"></i></a></li>
-                                            </ul>
+                                        <ul class="add-actions-link">
+                                                        <li class="add-cart heart"><a class="links-details "
+                                                                href="wishlist.html"><i class="fa fa-heart"></i></a>
+                                                        </li>
+                                                        <li class="add-cart "><a href="#" title="quick view"
+                                                                class="quick-view-btn" data-toggle="modal"
+                                                                data-target="#exampleModalCenter"><i
+                                                                    class="fa fa-eye"></i></a></li>
+
+                                                        <li class="add-cart active "><a href="#"><i
+                                                                    class="fa fa-cart-arrow-down fa-7x"
+                                                                    aria-hidden="true"></i></a>
+                                                        </li>
+                                                    </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -200,14 +207,14 @@ Home
                             <div class="item featured-product-item">
                                 <div class="featured-pro-wrapper  mb-sm-25">
                                     <div class="product-img">
-                                        <a href="product-details.html">
+                                        <a href="{{route('client.detail')}}">
                                             <img alt="" src="{{asset($pTop->url) }}">
                                         </a>
                                     </div>
                                     <div class="featured-pro-content">
                                         <div class="product-review">
                                             <h5 class="manufacturer">
-                                                <a href="shop-left-sidebar.html">{{$pTop->name}}</a>
+                                                <a href="{{route('client.detail')}}">{{$pTop->name}}</a>
                                             </h5>
                                         </div>
                                         <div class="rating-box">
@@ -219,7 +226,7 @@ Home
                                                 <li class="no-star"><i class="fa fa-star"></i></li>
                                             </ul>
                                         </div>
-                                        <h4><a class="featured-product-name" href="single-product.html">Mug Today is a
+                                        <h4><a class="featured-product-name" href="{{route('client.detail')}}l">Mug Today is a
                                                 good day</a></h4>
                                         <div class="featured-price-box">
                                             <span class="new-price new-price-2">{{$pTop->discout_price}}</span>
@@ -227,16 +234,20 @@ Home
                                             <span class="discount-percentage">-7%</span>
                                         </div>
                                         <div class="featured-product-action action__overplay">
-                                            <ul class="add-actions-link">
-                                                <li class="add-cart active"><a href="#"><i
-                                                            class="fa fa-cart-arrow-down fa-7x"
-                                                            aria-hidden="true"></i></a></li>
-                                                <li><a class="links-details" href="single-product.html"><i
-                                                            class="fa fa-heart"></i></a></li>
-                                                <li><a class="quick-view" data-toggle="modal"
-                                                        data-target="#exampleModalCenter" href="#"><i
-                                                            class="fa fa-eye"></i></a></li>
-                                            </ul>
+                                        <ul class="add-actions-link">
+                                                        <li class="add-cart heart"><a class="links-details "
+                                                                href="wishlist.html"><i class="fa fa-heart"></i></a>
+                                                        </li>
+                                                        <li class="add-cart "><a href="#" title="quick view"
+                                                                class="quick-view-btn" data-toggle="modal"
+                                                                data-target="#exampleModalCenter"><i
+                                                                    class="fa fa-eye"></i></a></li>
+
+                                                        <li class="add-cart active "><a href="#"><i
+                                                                    class="fa fa-cart-arrow-down fa-7x"
+                                                                    aria-hidden="true"></i></a>
+                                                        </li>
+                                                    </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -298,19 +309,22 @@ Home
                                         </div>
                                     </div>
                                     <div class="add-actions action__overplay">
-                                        <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
-                                                        class="fa fa-heart"></i></a></li>
-                                            <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
-                                                    data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                        class="fa fa-eye"></i></a></li>
+                                                    <ul class="add-actions-link">
+                                                        <li class="add-cart heart"><a class="links-details "
+                                                                href="wishlist.html"><i class="fa fa-heart"></i></a>
+                                                        </li>
+                                                        <li class="add-cart "><a href="#" title="quick view"
+                                                                class="quick-view-btn" data-toggle="modal"
+                                                                data-target="#exampleModalCenter"><i
+                                                                    class="fa fa-eye"></i></a></li>
 
+                                                        <li class="add-cart active "><a href="#"><i
+                                                                    class="fa fa-cart-arrow-down fa-7x"
+                                                                    aria-hidden="true"></i></a>
+                                                        </li>
+                                                    </ul>
 
-                                        </ul>
-                                        <div class="add-cart active "><a href="#"><i class="fa fa-cart-arrow-down fa-7x"
-                                                    aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
+                                                </div>
                                 </div>
                             </div>
                             <!-- single-product-wrap wow fadeInLeft end -->
@@ -375,10 +389,11 @@ Home
                                     @foreach($listProduces as $lproduct)
                                     <div class="col-lg-3 col-md-4 col-sm-6 mt-40">
                                         <!-- single-product-wrap start -->
-                                        <div class="single-product-wrap wow bounceInLeft" data-wow-duration="3s">
+                                        <div class="single-product-wrap">
                                             <div class="product-image">
                                                 <a href="{{route('client.detail')}}">
-                                                    <img src="{{asset($lproduct->url)}}" alt="Li's Product Image">
+                                                    <!-- {{ asset('assets/client/images/product/large-size/1.jpg')}} -->
+                                                    <img src="{{ asset($lproduct->url)}}" alt="Li's Product Image">
                                                 </a>
                                                 <span class="sticker">New</span>
                                             </div>
@@ -386,7 +401,7 @@ Home
                                                 <div class="product_desc_info">
                                                     <div class="product-review">
                                                         <h5 class="manufacturer">
-                                                            <a href="product-details.html">Graphic Corner</a>
+                                                            <a href="{{route('client.detail')}}">Graphic Corner</a>
                                                         </h5>
                                                         <div class="rating-box">
                                                             <ul class="rating">
@@ -399,13 +414,11 @@ Home
                                                         </div>
                                                     </div>
                                                     <h4><a class="product_name"
-                                                            href="{{route('client.detail')}}">{{$lproduct->name}}</a>
-                                                    </h4>
+                                                            href="{{route('client.detail')}}">{{$lproduct->name}}</a></h4>
                                                     <div class="price-box">
                                                         <span class="new-price">{{$lproduct->price}}</span>
                                                     </div>
                                                 </div>
-                                                
                                                 <div class="add-actions action__overplay">
                                                     <ul class="add-actions-link">
                                                         <li class="add-cart heart"><a class="links-details "
@@ -416,17 +429,17 @@ Home
                                                                 data-target="#exampleModalCenter"><i
                                                                     class="fa fa-eye"></i></a></li>
 
-
+                                                        <li class="add-cart active "><a href="#"><i
+                                                                    class="fa fa-cart-arrow-down fa-7x"
+                                                                    aria-hidden="true"></i></a>
+                                                        </li>
                                                     </ul>
-                                                    <div class="add-cart active "><a href="#"><i
-                                                                class="fa fa-cart-arrow-down fa-7x"
-                                                                aria-hidden="true"></i></a>
-                                                    </div>
+
                                                 </div>
-                                            
                                             </div>
                                         </div>
                                         <!-- single-product-wrap end -->
+
                                     </div>
                                     @endforeach
                                 </div>

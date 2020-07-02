@@ -18,9 +18,7 @@ Route::get('/login', function () {
 Route::get('/', 'PagesController@index')->name('client.index');
 
 // kenh nguoi ban
-Route::get('/seller', function () {
-    return view('shop.pages.index');
-})->name('client.seller');
+Route::get('/seller', 'ShopPagesController@index')->name('client.seller');
 
 // ADMIN
 Route::get('/admin', function () {
@@ -30,8 +28,6 @@ Route::get('/admin', function () {
 // group admin
 Route::prefix('admin')->group(function(){
     Route::name('admin.')->group(function(){
-
-
         Route::get('/add-statistical', function () {
             return view('admin.pages.statistical.add-statistical');
         })->name('add-statistical');
@@ -39,21 +35,6 @@ Route::prefix('admin')->group(function(){
         Route::get('/list-statistical', function () {
             return view('admin.pages.statistical.list-statistical');
         })->name('list-statistical');
-
-
-
-
-        // post
-
-        Route::get('/add-post', function () {
-            return view('admin.pages.post.add-post');
-        })->name('add-post');
-
-        Route::get('/list-post', function () {
-            return view('admin.pages.post.list-post');
-        })->name('list-post');
-
-        // sub_category
 
         // setting
         Route::get('/setting', function () {
@@ -132,6 +113,31 @@ Route::prefix('customer')->group(function(){
     });
 });
 
+// user
+Route::prefix('post')->group(function(){
+    Route::name('post.')->group(function(){
+        Route::get('/','PostController@index')->name('listPost');
+        Route::get('add-post','PostController@create')->name('them-moi-post');
+        Route::post('add-post/create','PostController@store')->name('xu-ly-them-moi');
+        Route::get('cap-nhap/{id}','PostController@edit')->name('cap-nhat');
+        Route::post('cap-nhap/{id}','PostController@update')->name('xu-ly-cap-nhat');
+        Route::get('xoa/{id}', 'PostController@destroy')->name('xoa');
+    });
+});
+
+
+// shop product
+Route::prefix('shopProduct')->group(function(){
+    Route::name('shopProduct.')->group(function(){
+        Route::get('/','ShopProductController@index')->name('listShopProduct');
+        Route::get('add-shop-product','ShopProductController@create')->name('them-moi-shop-product');
+        Route::post('add-shop-product/create','ShopProductController@store')->name('xu-ly-them-moi');
+        Route::get('cap-nhap/{id}','ShopProductController@edit')->name('cap-nhat');
+        Route::post('cap-nhap/{id}','ShopProductController@update')->name('xu-ly-cap-nhat');
+        Route::get('xoa/{id}', 'ShopProductController@destroy')->name('xoa');
+    });
+});
+
 
 // group shop
 Route::prefix('shop')->group(function(){
@@ -143,14 +149,7 @@ Route::prefix('shop')->group(function(){
         Route::get('/bill', function () {
             return view('shop.pages.bill');
         })->name('bill');
-        
-        Route::get('/product', function () {
-            return view('shop.pages.product_shop.add-product-shop');
-        })->name('product');
-        Route::get('/list-product', function () {
-            return view('shop.pages.product_shop.list-product-shop');
-        })->name('list-product');
-        
+
         Route::get('/report', function () {
             return view('shop.pages.shop_mana.report');
         })->name('report');
@@ -189,5 +188,3 @@ Route::get('/client/list-product','ProduceController@select')->name('client.list
 Route::get('/404', function () {
     return view('client.pages.404');
 })->name('client.404');
-
-

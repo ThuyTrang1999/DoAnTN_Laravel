@@ -98,7 +98,7 @@
                                                     <td>{{$cus -> gender}}</td>
                                                     <td>{{$cus -> address}}</td>
                                                     <td>{{$cus -> phone}}</td>
-                                                    <td>{{$cus -> gmail}}</td>
+                                                    <td>{{$cus -> email}}</td>
                                                     <td>{{$cus -> status}}</td>
                                                     <td>{{$cus -> created_at}}</td>
                                                     <td>{{$cus -> updated_at}}</td>

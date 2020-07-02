@@ -63,10 +63,9 @@ Trang danh sách
                                         <!-- single-product-wrap start -->
                                         <div class="single-product-wrap">
                                             <div class="product-image">
-                                                <a href="single-product.html">
-                                                <!-- {{ asset('assets/client/images/product/large-size/1.jpg')}} -->
-                                                    <img src="{{ asset($lproduct->url)}}"
-                                                        alt="Li's Product Image">
+                                                <a href="{{route('client.detail')}}">
+                                                    <!-- {{ asset('assets/client/images/product/large-size/1.jpg')}} -->
+                                                    <img src="{{ asset($lproduct->url)}}" alt="Li's Product Image">
                                                 </a>
                                                 <span class="sticker">New</span>
                                             </div>
@@ -74,7 +73,7 @@ Trang danh sách
                                                 <div class="product_desc_info">
                                                     <div class="product-review">
                                                         <h5 class="manufacturer">
-                                                            <a href="product-details.html">Graphic Corner</a>
+                                                            <a href="{{route('client.detail')}}">Graphic Corner</a>
                                                         </h5>
                                                         <div class="rating-box">
                                                             <ul class="rating">
@@ -87,7 +86,7 @@ Trang danh sách
                                                         </div>
                                                     </div>
                                                     <h4><a class="product_name"
-                                                            href="single-product.html">{{$lproduct->name}}</a></h4>
+                                                            href="{{route('client.detail')}}">{{$lproduct->name}}</a></h4>
                                                     <div class="price-box">
                                                         <span class="new-price">{{$lproduct->price}}</span>
                                                     </div>
@@ -102,12 +101,12 @@ Trang danh sách
                                                                 data-target="#exampleModalCenter"><i
                                                                     class="fa fa-eye"></i></a></li>
 
-                                                                    <li class="add-cart active "><a href="#"><i
-                                                                class="fa fa-cart-arrow-down fa-7x"
-                                                                aria-hidden="true"></i></a>
-                                                    </li>
+                                                        <li class="add-cart active "><a href="#"><i
+                                                                    class="fa fa-cart-arrow-down fa-7x"
+                                                                    aria-hidden="true"></i></a>
+                                                        </li>
                                                     </ul>
-                                                    
+
                                                 </div>
                                             </div>
                                         </div>

@@ -59,8 +59,8 @@
                 </li>
                 <li><a><i class="fa fa-newspaper-o" aria-hidden="true"></i> Bài viết<span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                  <li><a href="{{route('admin.add-post')}}" style="display: none;">Thêm bài viết</a></li>
-                    <li><a href="{{route('admin.list-post')}}">Danh sách bài viết </a></li>
+                  <li><a href="{{route('post.them-moi-post')}}" style="display: none;">Thêm bài viết</a></li>
+                    <li><a href="{{route('post.listPost')}}">Danh sách bài viết </a></li>
                     
                   </ul>
                 </li>

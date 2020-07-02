@@ -83,6 +83,7 @@
         </div>
     </div>
     <!-- Content Wraper Area End Here -->
+    @include('client.layouts.modal_show')
     <!-- Begin Footer Area -->
     @include('client.layouts.js')
 </body>

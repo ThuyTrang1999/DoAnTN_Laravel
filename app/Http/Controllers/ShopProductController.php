@@ -15,9 +15,9 @@ class ShopProductController extends Controller
      */
     public function index()
     {
-        $listProduces = DB::table('produces')->join('imgs', 'produces.id', '=', 'imgs.produce_id')->get();
-        // echo $listProduces;
-        return view('shop.pages.product_shop.list-product-shop', compact('listProduces'));
+        $listProducesCategory = DB::table('produces')->join('imgs', 'produces.id', '=', 'imgs.produce_id')->where('category_id','=','1')->get();
+        //  echo $listProducesCategory;
+        return view('shop.pages.product_shop.list-product-shop', compact('listProducesCategory'));
 
     }
     public function create()

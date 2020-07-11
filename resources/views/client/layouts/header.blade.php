@@ -14,7 +14,7 @@
                                       <a href="{{route('client.seller')}}">
                                           <i class="fa fa-shopping-bag" aria-hidden="true"></i>
 
-                                          <span>Shop chennel</span>
+                                          <span>Kênh người bán</span>
                                       </a>
                                   </li>
                               </ul>
@@ -31,99 +31,10 @@
                                       <a href="#" id="frm_register">
                                           <i class="fa fa-user-plus pr-1"></i>
                                           <span class="currency-selector-wrapper" data-toggle="modal"
-                                              data-target="#registerModal">Sign up</span>
-                                          <!-- Modal Login -->
-                                          <div class="modal fade" id="registerModal" tabindex="-1" role="dialog"
-                                              aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                              <div class="modal-dialog" role="document">
-                                                  <div class="modal-content">
-                                                      <div class="modal-header">
-                                                          <h5 class="modal-title" id="exampleModalLabel">Register</h5>
-                                                          <button type="button" class="close" data-dismiss="modal"
-                                                              aria-label="Close">
-                                                              <span aria-hidden="true">&times;</span>
-                                                          </button>
-                                                      </div>
-                                                      <div class="modal-body">
-                                                          <!-- Begin Login Content Area -->
-                                                          <div class="page-section mb-60">
-                                                              <div class="container">
-                                                                  <div class="row">
-
-                                                                      <div class="col-sm-12">
-                                                                          <form action="#">
-                                                                              <div class="login-form">
-
-                                                                                  <div class="row">
-                                                                                      <div
-                                                                                          class="col-md-6 col-12 mb-20">
-                                                                                          <label>Name (*)</label>
-                                                                                          <input class="mb-0"
-                                                                                              type="text" name="cus_name"
-                                                                                              placeholder="First Name">
-                                                                                      </div>
-                                                                                      <div
-                                                                                          class="col-md-6 col-12 mb-20">
-                                                                                          <label>Gender</label>
-                                                                                          <select name="res_gender" name="cus_gender" id="res_gender">
-                                                                                              <option value="Male">Male</option>
-                                                                                              <option value="Female">Female</option>
-                                                                                          </select>
-                                                                                      </div>
-                                                                                      <div class="col-md-6 mb-20">
-                                                                                          <label>Email</label>
-                                                                                          <input class="mb-0"
-                                                                                              type="email" name="cus_email"
-                                                                                              placeholder="Email Address">
-                                                                                      </div>
-                                                                                      <div class="col-md-6 mb-20">
-                                                                                          <label>phone</label>
-                                                                                          <input class="mb-0"
-                                                                                              type="phone" name="cus_phone"
-                                                                                              placeholder="Email Address">
-                                                                                      </div>
-                                                                                      <div class="col-md-12 mb-20">
-                                                                                          <label>Address</label>
-                                                                                          <input class="mb-0"
-                                                                                              type="email" name="cus_address"
-                                                                                              placeholder="Address">
-                                                                                      </div>
-                                                                                      <div class="col-md-6 mb-20">
-                                                                                          <label>Password</label>
-                                                                                          <input class="mb-0"
-                                                                                              type="password" name="cus_pass"
-                                                                                              placeholder="Password">
-                                                                                      </div>
-                                                                                      <div class="col-md-6 mb-20">
-                                                                                          <label>Confirm
-                                                                                              Password</label>
-                                                                                          <input class="mb-0"
-                                                                                              type="password" name="cus_repass"
-                                                                                              placeholder="Confirm Password">
-                                                                                      </div>
-                                                                                      <div class="col-12">
-                                                                                          <button
-                                                                                              class="register-button mt-0">Register</button>
-
-                                                                                          <p class="text-right">
-                                                                                              <a href="#loginModal"  data-dismiss="modal"
-                                                              aria-label="Close" id="goLogin" data-toggle="modal" data-target="#loginModal">Sign in</a>
-                                                                                          </p>
-                                                                                      </div>
-                                                                                  </div>
-                                                                              </div>
-                                                                          </form>
-                                                                      </div>
-                                                                  </div>
-                                                              </div>
-                                                          </div>
-                                                          <!-- Login Content Area End Here -->
-                                                      </div>
-
-                                                  </div>
-                                              </div>
-                                          </div>
-                                          <!-- End  modal Login-->
+                                              data-target="#registerModal">Đăng ký</span>
+                                          <!-- Modal Register -->
+                                          @include('client.layouts.register')
+                                          <!-- End  modal Register-->
                                       </a>
                                   </li>
                                   <!-- Currency Area End Here -->
@@ -132,86 +43,10 @@
                                       <a href="#">
                                           <i class="fa fa-user-circle pr-1"></i>
                                           <span class="language-selector-wrapper" data-toggle="modal"
-                                              data-target="#loginModal">Sign in</span>
+                                              data-target="#loginModal">Đăng nhập</span>
                                           <!-- Modal Login -->
-                                          <div class="modal fade" id="loginModal" tabindex="-1" role="dialog"
-                                              aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                              <div class="modal-dialog" role="document">
-                                                  <div class="modal-content">
-                                                      <div class="modal-header">
-                                                          <h5 class="modal-title" id="exampleModalLabel">Login Form
-                                                          </h5>
-                                                          <button type="button" class="close" data-dismiss="modal"
-                                                              aria-label="Close">
-                                                              <span aria-hidden="true">&times;</span>
-                                                          </button>
-                                                      </div>
-                                                      <div class="modal-body">
-                                                          <!-- Begin Login Content Area -->
-                                                          <div class="page-section mb-60" >
-                                                              <div class="container">
-                                                                  <div class="row">
-                                                                      <div class="col-sm-12">
-                                                                          <!-- Login Form s-->
-                                                                          <form action="#" >
-                                                                              <div class="login-form">
-
-                                                                                  <div class="row">
-                                                                                      <div
-                                                                                          class="col-md-12 col-12 mb-20">
-                                                                                          <label>Email Address*</label>
-                                                                                          <input class="mb-0"
-                                                                                              type="email"
-                                                                                              placeholder="Email Address">
-                                                                                      </div>
-                                                                                      <div class="col-12 mb-20">
-                                                                                          <label>Password</label>
-                                                                                          <input class="mb-0"
-                                                                                              type="password"
-                                                                                              placeholder="Password">
-                                                                                      </div>
-                                                                                      <div class="col-md-6">
-
-                                                                                      </div>
-                                                                                      <div
-                                                                                          class="col-md-6 mt-10 mb-20 text-left text-md-right">
-                                                                                          <a href="#"> Forgotten
-                                                                                              pasward?</a>
-                                                                                      </div>
-                                                                                      <div class="col-md-12">
-                                                                                          <button
-                                                                                              class="register-button mt-0">Login</button>
-                                                                                      </div>
-                                                                                  </div>
-                                                                                  <div class="row mt-3">
-                                                                                      <div
-                                                                                          class="col-lg-12 text-center">
-                                                                                          <button
-                                                                                              class="face-button btn mx-1">
-                                                                                              <i class="fa fa-facebook"
-                                                                                                  aria-hidden="true"></i>
-                                                                                          </button>
-
-
-                                                                                      </div>
-                                                                                  </div>
-                                                                                  <p class="text-right">
-                                                                                              <a href="#"  data-dismiss="modal"
-                                                              aria-label="Close" id="goRegister" data-toggle="modal" data-target="#registerModal">Sign up</a>
-                                                                                          </p>
-                                                                              </div>
-                                                                          </form>
-                                                                      </div>
-
-                                                                  </div>
-                                                              </div>
-                                                          </div>
-                                                          <!-- Login Content Area End Here -->
-                                                      </div>
-
-                                                  </div>
-                                              </div>
-                                          </div>
+                                   
+                                         @include('client.layouts.login')
                                           <!-- End  modal Login-->
                                       </a>
                                   </li>
@@ -309,7 +144,7 @@
           </div>
           <!-- Header Middle Area End Here -->
           <!-- Begin Header Bottom Area -->
-          @include('client.layouts.menu')
+         
           <!-- Header Bottom Area End Here -->
           <!-- Begin Mobile Menu Area -->
           <div class="mobile-menu-area d-lg-none d-xl-none col-12">

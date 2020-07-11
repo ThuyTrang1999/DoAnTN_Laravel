@@ -2428,6 +2428,7 @@ ul.ht-menu a:hover {
 }
 .product-image {
   position: relative;
+  padding: 15px;
 }
 .section-title-3 > h2 {
   background: #ffffff none repeat scroll 0 0;

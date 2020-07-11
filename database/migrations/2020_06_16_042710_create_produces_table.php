@@ -23,9 +23,13 @@ class CreateProducesTable extends Migration
             $table->integer('category_id')->unsigned();
             //$table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->integer('author_id')->unsigned();
+            $table->integer('vendor_id');
             //$table->foreign('author_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('price');
             $table->string('discout_price');
+            $table->float('rates');
+            $table->integer('amount_rate');
+
             $table->string('status');
 
             $table->timestamps();

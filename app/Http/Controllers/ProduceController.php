@@ -19,13 +19,13 @@ class ProduceController extends Controller
     public function index()
     {
         $listProduce = DB::table('produces')->join('imgs', 'produces.id', '=', 'imgs.produce_id')->get();
+        
         return view('admin.pages.product.list-product', compact('listProduce'));
     }
     public function select()
     {
-        // $listProduces = produce::all();
         $listProduces = DB::table('produces')->join('imgs', 'produces.id', '=', 'imgs.produce_id')->get();
-        // echo "$listProduces";
+        // echo $listProduces;
         return view('client.pages.list-product', compact('listProduces'));
     }
 
@@ -76,12 +76,6 @@ class ProduceController extends Controller
         $imageName = time().'.'.$request->file('imgFile')->getClientOriginalExtension();
 
         $request->imgFile->move('upload', $imageName);
-
-        
-
-      
-        
-
 
         $listProduce->name = $request->name;
         $listProduce->unit = $request->unit;
@@ -165,4 +159,11 @@ class ProduceController extends Controller
         // $linhVuc->delete();
         // return redirect()->route('linh-vuc.danh-sach');
     }
+
+    // show detail
+    public function detail(Request $req){
+        $sanpham=produce::where('id',$req->id)->first();
+        return view('client.pages.detail', compact('sanpham'));
+    }
+ 
 }

@@ -6,12 +6,12 @@
                 <div class="hb-menu">
                     <nav>
                         <ul>
-                            <li class="dropdown-holder home"><a href="{{ route('client.index')}}">Home</a></li>
+                            <li class="dropdown-holder home"><a href="{{ route('client.index')}}">Trang chủ</a></li>
 
 
-                            <li class="megamenu-holder"><a href="#">Shop</a>
+                            <li class="megamenu-holder"><a href="#">cửa hàng</a>
                                 <ul class="megamenu hb-megamenu">
-                                    <li><a href="shop-left-sidebar.html">Shop Page</a>
+                                    <li><a href="shop-left-sidebar.html">Cửa hàng</a>
                                         <ul>
                                             <li><a href="#">Con heo shop</a></li>
                                             <li><a href="#">Ca xau shop</a></li>
@@ -24,9 +24,9 @@
                             </li>
 
 
-                            <li class="dropdown-holder"><a href="#">Product</a>
+                            <li class="dropdown-holder"><a href="#">Sản phẩm</a>
                                 <ul class="hb-dropdown">
-                                    <li><a href="{{ route('client.list-product')}}">All product shop</a></li>
+                                    <li><a href="{{ route('client.list-product')}}">Tất cả sản phẩm</a></li>
                                    
                                     <li class="sub-dropdown-holder"><a href="#">Laptop</a>
                                         <ul class="hb-dropdown hb-sub-dropdown">
@@ -37,7 +37,7 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="sub-dropdown-holder"><a href="#">Fastion</a>
+                                    <li class="sub-dropdown-holder"><a href="#">Thời trang</a>
                                         <ul class="hb-dropdown hb-sub-dropdown">
                                             <li><a href="blog-2-column.html"></a></li>
                                             <li><a href="blog-3-column.html">Blog 3 Column</a></li>
@@ -46,7 +46,7 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="sub-dropdown-holder"><a href="#">Clock</a>
+                                    <li class="sub-dropdown-holder"><a href="#">Đồng hồ</a>
                                         <ul class="hb-dropdown hb-sub-dropdown">
                                             <li><a href="blog-2-column.html"></a></li>
                                             <li><a href="blog-3-column.html">Blog 3 Column</a></li>
@@ -55,7 +55,7 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="sub-dropdown-holder"><a href="#">Foods</a>
+                                    <li class="sub-dropdown-holder"><a href="#">Thực phẩm</a>
                                         <ul class="hb-dropdown hb-sub-dropdown">
                                             <li><a href="blog-2-column.html"></a></li>
                                             <li><a href="blog-3-column.html">Blog 3 Column</a></li>
@@ -69,7 +69,7 @@
 
                                 </ul>
                             </li>
-                            <li class="megamenu-static-holder"><a href="index.html">Pages</a>
+                            <li class="megamenu-static-holder"><a href="index.html">Trang</a>
                                 <ul class="megamenu hb-megamenu">
                                     <li><a href="blog-left-sidebar.html">Blog Layouts</a>
                                         <ul>
@@ -116,8 +116,8 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="{{ route('client.about')}}">About Us</a></li>
-                            <li><a href="{{ route('client.contact')}}">Contact</a></li>
+                            <li><a href="{{ route('client.about')}}">Giới thiệu</a></li>
+                            <li><a href="{{ route('client.contact')}}">Liên hệ</a></li>
                         </ul>
                     </nav>
                 </div>

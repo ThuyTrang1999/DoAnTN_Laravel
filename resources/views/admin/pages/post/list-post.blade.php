@@ -50,6 +50,10 @@ Danh sách bài viết
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 81px;" aria-sort="ascending">
                                                         Title</th>
+                                                        <th class="sorting_asc" tabindex="0"
+                                                        aria-controls="datatable-responsive" rowspan="1" colspan="1"
+                                                        style="width: 81px;" aria-sort="ascending">
+                                                        Images</th>
                                                     <th class="sorting" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 80px;">Shop desc</th>
@@ -78,6 +82,7 @@ Danh sách bài viết
                                                 @foreach ($listPost as $lpost)
                                                 <tr>
                                                     <td>{{$lpost->title}}</td>
+                                                    <td>img</td>
                                                     <td>{{$lpost->short_desc}}</td>
                                                     <td>{{$lpost->desc}}</td>
                                                     <td>{{$lpost->author_id}}</td>

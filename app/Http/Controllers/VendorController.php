@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\vendor;
 use App\user;
@@ -14,7 +14,9 @@ class VendorController extends Controller
      */
     public function index()
     {
-        $listVendors = vendor::all();
+        // $listVendors = vendor::all();
+        $listVendors = DB::table('vendors')->join('users', 'vendors.user_id', '=', 'users.id')->get();
+        // echo $listVendors ;
         return view('admin.pages.shop.list-shop', compact('listVendors'));
 
     }
@@ -32,6 +34,7 @@ class VendorController extends Controller
      */
     public function store(Request $request)
     {   
+        
        
         $vendor = new vendor;
         $vendor->shop_name = $request->shop_name;
@@ -41,7 +44,7 @@ class VendorController extends Controller
         $vendor->desc =  $request->desc;
         // $vendor->logo = $request->logoFile->getClientOriginalName();
         $get_images_logo=$request->file('logoFile');
-        $vendor->status ="1";
+        $vendor->status =$request->status;
         // images banner
         if($get_images_banner && $get_images_logo){
             $new_images_banner=time() . "_" . rand(0,9999999) . "_" . md5(rand(0,9999999)) . "." .$request->bannerFile->getClientOriginalName();
@@ -52,8 +55,6 @@ class VendorController extends Controller
             $vendor->logo = $new_images_logo;
             $vendor->save();
         }
-       
-      
         $vendor->save();
         return redirect()->route('vendor.listVendor');
     }
@@ -76,9 +77,10 @@ class VendorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        // $vendor = vendor::find($id);
-        // return view('admin.pages.shop.add-shop ', compact('vendor'));
+    {   $addVendor = vendor::find($id);
+        $dataUser = user::all();
+        
+         return view('admin.pages.shop.add-shop', compact('addVendor', 'dataUser'));    
     }
 
     /**
@@ -90,10 +92,26 @@ class VendorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $linhVuc = LinhVuc::find($id);
-        // $linhVuc->ten_linh_vuc = $request->ten_linh_vuc;
-        // $linhVuc->save();
-        // return redirect()->route('linh-vuc.danh-sach');
+         $addVendor = vendor::find($id);
+         $addVendor->shop_name = $request->shop_name;
+         $addVendor->user_id = $request->id_user;
+         $set_images_banner=$request->file('bannerFile');
+         $addVendor->desc = $request->desc;
+         $set_images_logo = $request->file('logoFile');
+         $addVendor->status = $request->status;
+
+         if($set_images_banner && $set_images_logo){
+            $new_images_banner=time() . "_" . rand(0,9999999) . "_" . md5(rand(0,9999999)) . "." .$request->bannerFile->getClientOriginalName();
+            $new_images_logo=time() . "_" . rand(0,9999999) . "_" . md5(rand(0,9999999)) . "." .$request->logoFile->getClientOriginalName();
+            $set_images_banner->move('upload/banner', $new_images_banner);
+            $set_images_logo->move('upload/logo', $new_images_logo);
+            $addVendor->banner = $new_images_banner;
+            $addVendor->logo = $new_images_logo;
+            $addVendor->save();
+        }
+
+         $addVendor->save();
+         return redirect()->route('vendor.listVendor')->with(['flash_message' => 'Cập nhật cửa hàng thành công ']);
     }
 
     /**

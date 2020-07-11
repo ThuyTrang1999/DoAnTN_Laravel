@@ -10,35 +10,43 @@ Trang chu
 
             <div class="top_tiles">
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
+              <a href="{{route('user.listUser')}}">
                 <div class="tile-stats bg-success text-white">
                   <div class="icon text-white"><i class="fa fa-users" aria-hidden="true"></i></div>
                   <div class="count">{{DB::table('users')->count()}}</div>
                   <h3 class="text-white">Số tài khoản</h3>
                 </div>
+                </a>
               </div>
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 ">
+              <a href="{{route('vendor.listVendor')}}">
                 <div class="tile-stats bg-primary text-white">
                   <div class="icon text-white"><i class="fa fa-shopping-bag" aria-hidden="true"></i></div>
                   <div class="count">{{DB::table('vendors')->count()}}</div>
                   <h3 class="text-white">Số cửa hàng</h3>
                   
                 </div>
+                </a>
               </div>
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 ">
+              <a href="{{route('category.listCategory')}}">
                 <div class="tile-stats bg-info text-white">
                   <div class="icon text-white"><i class="fa fa-table"></i></div>
                   <div class="count">{{DB::table('categories')->count()}}</div>
                   <h3 class="text-white">Số loại sản phẩm</h3>
                   
                 </div>
+                </a>
               </div>
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 ">
+              <a href="{{route('post.listPost')}}">
                 <div class="tile-stats bg-danger text-white">
                   <div class="icon text-white"><i class="fa fa-comments-o"></i></div>
                   <div class="count">{{DB::table('posts')->count()}}</div>
                   <h3 class="text-white">Số bài viết</h3>
                   
                 </div>
+                </a>
               </div>
             </div>
           </div>

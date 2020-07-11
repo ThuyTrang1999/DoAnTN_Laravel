@@ -29,9 +29,7 @@ Trang danh sách
                             </ul>
                             <!-- shop-item-filter-list end -->
                         </div>
-                        <div class="toolbar-amount">
-                            <span>Showing 1 to 9 of 15</span>
-                        </div>
+                        
                     </div>
                     <!-- product-select-box start -->
                     <div class="product-select-box">
@@ -62,12 +60,12 @@ Trang danh sách
                                     <div class="col-lg-3 col-md-4 col-sm-6 mt-40">
                                         <!-- single-product-wrap start -->
                                         <div class="single-product-wrap">
-                                            <div class="product-image">
+                                            <div class="product-image p-5">
                                                 <a href="{{route('client.detail')}}">
-                                                    <!-- {{ asset('assets/client/images/product/large-size/1.jpg')}} -->
-                                                    <img src="{{ asset($lproduct->url)}}" alt="Li's Product Image">
+                                                   
+                                                    <img src="../upload/{{ $lproduct->url}}" alt="Li's Product Image" style="{{$lproduct->style}}">
                                                 </a>
-                                                <span class="sticker">New</span>
+                                                <!-- <span class="sticker">New</span> -->
                                             </div>
                                             <div class="product_desc">
                                                 <div class="product_desc_info">

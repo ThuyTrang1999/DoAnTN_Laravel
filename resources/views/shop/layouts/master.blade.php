@@ -52,7 +52,7 @@
     <!-- Begin Body Wrapper -->
     <div class="body-wrapper">
         <!-- Begin Header Area -->
-        @include("shop.layouts.header")
+        @include("client.layouts.header")
         <!-- Begin Li's Content Wraper Area -->
         <div class="content-wraper pb-30">
             <div class="container">
@@ -67,7 +67,7 @@
                         <div class="sidebar-categores-box mt-sm-30 mt-xs-30">
                             <div class="sidebar-title">
                                 <h2 class="text-center">
-                                    Shop Cây Chuối
+                                    Sky Shop
                                 </h2>
                             </div>
                             <!-- category-sub-menu start -->
@@ -83,9 +83,10 @@
         </div>
     </div>
     <!-- Content Wraper Area End Here -->
+
     @include('client.layouts.modal_show')
     <!-- Begin Footer Area -->
-    @include('client.layouts.js')
+    @include("client.layouts.footer")
 </body>
 
 <!-- shop-list31:48-->

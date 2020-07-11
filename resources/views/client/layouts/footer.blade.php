@@ -12,7 +12,7 @@
                                         <img src="{{ asset('assets/client/images/shipping-icon/1.png')}}" alt="Shipping Icon">
                                     </div>
                                     <div class="shipping-text">
-                                        <h2>Free Delivery</h2>
+                                        <h2>Giao hàng miển phí</h2>
                                         <p>And free returns. See checkout for delivery dates.</p>
                                     </div>
                                 </div>
@@ -25,7 +25,7 @@
                                         <img src="{{ asset('assets/client/images/shipping-icon/2.png')}}" alt="Shipping Icon">
                                     </div>
                                     <div class="shipping-text">
-                                        <h2>Safe Payment</h2>
+                                        <h2>Thanh toán an toàn</h2>
                                         <p>Pay with the world's most popular and secure payment methods.</p>
                                     </div>
                                 </div>
@@ -38,7 +38,7 @@
                                         <img src="{{ asset('assets/client/images/shipping-icon/3.png')}}" alt="Shipping Icon">
                                     </div>
                                     <div class="shipping-text">
-                                        <h2>Shop with Confidence</h2>
+                                        <h2>Uy tính và đảm bảo</h2>
                                         <p>Our Buyer Protection covers your purchasefrom click to delivery.</p>
                                     </div>
                                 </div>
@@ -51,7 +51,7 @@
                                         <img src="{{ asset('assets/client/images/shipping-icon/4.png')}}" alt="Shipping Icon">
                                     </div>
                                     <div class="shipping-text">
-                                        <h2>24/7 Help Center</h2>
+                                        <h2>Trung tâm hổ trợ 24/7</h2>
                                         <p>Have a question? Call a Specialist or chat online.</p>
                                     </div>
                                 </div>
@@ -72,18 +72,15 @@
                             <div class="col-lg-4 col-md-6">
                                 <div class="footer-logo">
                                     <img src="{{ asset('assets/client/images/menu/logo/3.png')}}" alt="Footer Logo">
-                                    <p class="info">
-                                        We are a team of designers and developers that create high quality HTML Template
-                                        & Woocommerce, Shopify Theme.
-                                    </p>
+                                    
                                 </div>
                                 <ul class="des">
                                     <li>
-                                        <span>Address: </span>
-                                        6688Princess Road, London, Greater London BAS 23JK, UK
+                                        <span>Địa chỉ: </span>
+                                        65 Huỳnh Thúc Kháng, Phường Bến nghé, Quận 1
                                     </li>
                                     <li>
-                                        <span>Phone: </span>
+                                        <span>Số điện thoại: </span>
                                         <a href="#">(+123) 123 321 345</a>
                                     </li>
                                     <li>
@@ -98,10 +95,10 @@
                                 <div class="footer-block">
                                     <h3 class="footer-block-title">3tm shop</h3>
                                     <ul>
-                                        <li><a href="#">Introduce</a></li>
-                                        <li><a href="#">Recruitment</a></li>
-                                        <li><a href="#">Advisory</a></li>
-                                        <li><a href="#">Customer care</a></li>
+                                        <li><a href="#">Giới thiệu</a></li>
+                                        <li><a href="#">Thông tin tuyển dụng</a></li>
+                                        <li><a href="#">Kênh người bán</a></li>
+                                        <li><a href="#">Điều khoản</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -109,12 +106,10 @@
                             <!-- Begin Footer Block Area -->
                             <div class="col-lg-2 col-md-3 col-sm-6">
                                 <div class="footer-block">
-                                    <h3 class="footer-block-title">payment methods</h3>
+                                    <h3 class="footer-block-title">Phương thức thanh toán</h3>
                                     <ul>
-                                        <li><a href="#">Delivery</a></li>
-                                        <li><a href="#">Legal Notice</a></li>
-                                        <li><a href="#">About us</a></li>
-                                        <li><a href="#">Contact us</a></li>
+                                        <li><a href="#">Tiền mặt</a></li>
+                                        <li><a href="#">Thanh toán online</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -122,7 +117,7 @@
                             <!-- Begin Footer Block Area -->
                             <div class="col-lg-4">
                                 <div class="footer-block">
-                                    <h3 class="footer-block-title">Connect with us</h3>
+                                    <h3 class="footer-block-title">Kết nối với chúng tôi</h3>
                                     <ul class="social-link">
                                     
                                         <li class="google-plus">
@@ -191,12 +186,7 @@
                                 </a>
                             </div>
                             <!-- Footer Payment Area End Here -->
-                            <!-- Begin Copyright Area -->
-                            <div class="copyright text-center pt-25">
-                                <span><a href="https://www.templatespoint.net" target="_blank">Templates
-                                        Point</a></span>
-                            </div>
-                            <!-- Copyright Area End Here -->
+                            
                         </div>
                     </div>
                 </div>

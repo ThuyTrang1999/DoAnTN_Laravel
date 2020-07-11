@@ -24,13 +24,13 @@ Home shop
             <div class="col-md-4 col-sm-4 text-center">
                 <div class="seller_item about-image-wrap btn  btn-success">
                     <p class="seller_num">0</p>
-                    <span>Sản phẩm chờ xử lý</span>
+                    <span>Hóa đơn chờ xử lý</span>
                 </div>
             </div>
             <div class="col-md-4 col-sm-4 text-center">
             <div class="seller_item about-image-wrap btn btn-primary">
                     <p class="seller_num">0</p>
-                    <span>Sản phẩm đã xử lý</span>
+                    <span>Hóa đơn đã xử lý</span>
                 </div>
             </div>
             <div class="col-md-4 col-sm-4 text-center">

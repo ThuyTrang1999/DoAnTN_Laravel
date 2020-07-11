@@ -7,16 +7,16 @@
                             <!--Category Menu Start-->
                             <div class="category-menu category-menu-2">
                                 <div class="category-heading">
-                                    <h2 class="categories-toggle"><span>categories</span></h2>
+                                    <h2 class="categories-toggle"><span>Loại sản phẩm</span></h2>
                                 </div>
                                 <div id="cate-toggle" class="category-menu-list">
                                     <ul>
 
                                         @foreach ($Category as $cate)
-                                        <li class="right-menu"><a href="shop-left-sidebar.html">{{ $cate -> name}}</a>
+                                        <li class="right-menu"><a>{{ $cate -> name}}</a>
                                             <ul class="cat-mega-menu">
                                                 <li class="right-menu cat-mega-title">
-                                                   <a href="shop-left-sidebar.html">Prime Video</a>
+                                                   <a href="#">Prime Video</a>
                                                     <ul>
                                                         <li><a href="#">All Videos</a></li>
                                                         <li><a href="#">Blouses</a></li>

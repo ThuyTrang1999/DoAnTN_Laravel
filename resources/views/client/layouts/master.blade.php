@@ -52,7 +52,7 @@
   
         @include('client.layouts.header')
         <!-- Header Area End Here -->
-        
+        @include('client.layouts.menu')
         <!-- content -->
        
              @yield('content')

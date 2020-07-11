@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('address');
             $table->string('num_order');
             $table->string('gender');
+            $table->string('avatar');
             $table->string('birthday');
             $table->tinyInteger('role');
             $table->string('status');

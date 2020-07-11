@@ -112,7 +112,7 @@ Danh sách sản phẩm
                                                     <td>{{$prod->unit}}</td>
                                                     <td>{{$prod->SKU}}</td>
                                                     <td>
-                                                        <img src="{{asset($prod->url)}}" alt=""
+                                                        <img src="upload/{{$prod->url}}" alt=""
                                                             style="width: 50px; height: 50px;">
                                                     </td>
                                                     <td>{{$prod->desc}}</td>

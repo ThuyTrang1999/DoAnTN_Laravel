@@ -12,59 +12,98 @@ Trang chủ shop
         </h2>
     </div>
     <div class="row">
-        @foreach($listProduces as $lproduct)
-        <div class="col-lg-3 col-md-4 col-sm-6 mt-40">
-            <!-- single-product-wrap start -->
-            <div class="single-product-wrap">
-                <div class="product-image">
-                    <a href="{{route('client.detail')}}">
-                        <!-- {{ asset('assets/client/images/product/large-size/1.jpg')}} -->
-                        <img src="{{ asset($lproduct->url)}}" alt="Li's Product Image">
-                    </a>
-                    <span class="sticker">New</span>
-                </div>
-                <div class="product_desc">
-                    <div class="product_desc_info">
-                        <div class="product-review">
-                            <h5 class="manufacturer">
-                                <a href="{{route('client.detail')}}">Graphic Corner</a>
-                            </h5>
-                            <div class="rating-box">
-                                <ul class="rating">
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li class="no-star"><i class="fa fa-star"></i></li>
-                                    <li class="no-star"><i class="fa fa-star"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <h4><a class="product_name" href="{{route('client.detail')}}">{{$lproduct->name}}</a></h4>
-                        <div class="price-box">
-                            <span class="new-price">{{$lproduct->price}}</span>
-                        </div>
-                    </div>
-                    <div class="add-actions action__overplay">
-                        <ul class="add-actions-link">
-                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
-                                        class="fa fa-heart"></i></a>
-                            </li>
-                            <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
-                                    data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a>
-                            </li>
+                                    <div class="col-sm-12">
+                                        <table id="datatable-responsive"
+                                            class="table table-striped table-bordered dt-responsive nowrap dataTable no-footer dtr-inline"
+                                            cellspacing="0" width="100%" role="grid"
+                                            aria-describedby="datatable-responsive_info" style="width: 100%;">
+                                            <thead>
+                                                <tr role="row">
+                                                    <th class="sorting_asc" tabindex="0"
+                                                        aria-controls="datatable-responsive" rowspan="1" colspan="1"
+                                                        style="width: 81px;" aria-sort="ascending">
+                                                        Tên sản phẩm</th>
+                                                    <th class="sorting" tabindex="0"
+                                                        aria-controls="datatable-responsive" rowspan="1" colspan="1"
+                                                        style="width: 80px;">Đơn vị</th>
+                                                    <th class="sorting" tabindex="0"
+                                                        aria-controls="datatable-responsive" rowspan="1" colspan="1"
+                                                        style="width: 176px;">
+                                                        SKU</th>
+                                                    <th class="sorting" tabindex="0"
+                                                        aria-controls="datatable-responsive" rowspan="1" colspan="1"
+                                                        style="width: 176px;">
+                                                        Hình ảnh</th>
 
-                            <li class="add-cart active "><a href="#"><i class="fa fa-cart-arrow-down fa-7x"
-                                        aria-hidden="true"></i></a>
-                            </li>
-                        </ul>
+                                                    <!-- <th class="sorting" tabindex="0"
+                                                        aria-controls="datatable-responsive" rowspan="1" colspan="1"
+                                                        style="width: 34px;"
+                                                        aria-label="Age: activate to sort column ascending">
+                                                        Mô tả
+                                                    </th> -->
 
-                    </div>
-                </div>
-            </div>
-            <!-- single-product-wrap end -->
+                                                    <th class="sorting" tabindex="0"
+                                                        aria-controls="datatable-responsive" rowspan="1" colspan="1"
+                                                        style="width: 166px;"
+                                                        aria-label="E-mail: activate to sort column ascending">Loại sản phẩm
+                                                    </th>
+                                                    <th class="sorting" tabindex="0"
+                                                        aria-controls="datatable-responsive" rowspan="1" colspan="1"
+                                                        style="width: 166px;"
+                                                        aria-label="E-mail: activate to sort column ascending">Id người thêm
+                                                    </th>
+                                                    <th class="sorting" tabindex="0"
+                                                        aria-controls="datatable-responsive" rowspan="1" colspan="1"
+                                                        style="width: 166px;"
+                                                        aria-label="E-mail: activate to sort column ascending">Giá
+                                                    </th>
+                                                    <th class="sorting" tabindex="0"
+                                                        aria-controls="datatable-responsive" rowspan="1" colspan="1"
+                                                        style="width: 166px;"
+                                                        aria-label="E-mail: activate to sort column ascending">
+                                                        Giá KM
+                                                    </th>
+                                                    <th class="sorting" tabindex="0"
+                                                        aria-controls="datatable-responsive" rowspan="1" colspan="1"
+                                                        style="width: 166px;"
+                                                        aria-label="E-mail: activate to sort column ascending">Trạng thái
+                                                    </th>
+                                                    <th tabindex="0" aria-controls="datatable-responsive" rowspan="1"
+                                                        colspan="1" style="width: 81px;" aria-sort="ascending">
+                                                        Chức năng</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($listProducesCategory as $listProCate)
+                                                <tr role="row" class="odd">
+                                                    <td>{{$listProCate->name}}</td>
+                                                    <td>{{$listProCate->unit}}</td>
+                                                    <td>{{$listProCate->SKU}}</td>
+                                                    <td>
+                                                        <img src="upload/{{$listProCate->url}}" alt=""
+                                                            style="width: 50px; height: 50px;">
+                                                    </td>
+                                                    <!-- <td>{{$listProCate->desc}}</td> -->
+                                                    <td>{{$listProCate->category_id}}</td>
+                                                    <td>{{$listProCate->author_id}}</td>
+                                                    <td>{{$listProCate->price}}</td>
+                                                    <td>{{$listProCate->discout_price}}</td>
+                                                    <td>{{$listProCate->status}}</td>
+                                                    <td class="text-center">
+                                                        <a href="#" class="btn btn-warning">
+                                                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                                        </a>
+                                                        <button class="btn btn-danger">
+                                                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                                        </button>
 
-        </div>
-        @endforeach
-    </div>
+                                                    </td>
+
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
 </div>
 @endsection

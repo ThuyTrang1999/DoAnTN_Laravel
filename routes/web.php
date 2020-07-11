@@ -56,6 +56,18 @@ Route::prefix('user')->group(function(){
     });
 });
 
+// vendor
+Route::prefix('vendor')->group(function(){
+    Route::name('vendor.')->group(function(){
+        Route::get('/','VendorController@index')->name('listVendor');
+        Route::get('add-vendor','VendorController@create')->name('them-moi-vendor');
+        Route::post('add-vendor/create','VendorController@store')->name('xu-ly-them-moi-vendor');
+        Route::get('cap-nhap/{id}','VendorController@edit')->name('cap-nhat');
+        Route::post('cap-nhap/{id}','VendorController@update')->name('xu-ly-cap-nhat');
+        Route::get('xoa/{id}', 'VendorController@destroy')->name('xoa');
+    });
+});
+
 
 // category
 Route::prefix('category')->group(function(){
@@ -81,17 +93,7 @@ Route::prefix('product')->group(function(){
     });
 });
 
-// vendor
-Route::prefix('vendor')->group(function(){
-    Route::name('vendor.')->group(function(){
-        Route::get('/','VendorController@index')->name('listVendor');
-        Route::get('add-vendor','VendorController@create')->name('them-moi-vendor');
-        Route::post('add-vendor/create','VendorController@store')->name('xu-ly-them-moi-vendor');
-        Route::get('cap-nhap/{id}','VendorController@edit')->name('cap-nhat-vendor');
-        Route::post('cap-nhap/{id}','VendorController@update')->name('xu-ly-cap-nhat-vendor');
-        Route::get('xoa/{id}', 'VendorController@destroy')->name('xoa');
-    });
-});
+
 
 // sub_category
 Route::prefix('sub_category')->group(function(){
@@ -110,6 +112,7 @@ Route::prefix('customer')->group(function(){
     Route::name('customer.')->group(function(){
         Route::get('/', 'CustomerController@index')->name('listCustomer');
         Route::get('add-customer','CustomerController@create')->name('them-moi-customer');
+        Route::post('add-sub_category/create','CustomerController@store')->name('xu-ly-them-moi');
     });
 });
 
@@ -179,12 +182,13 @@ Route::get('/client/cart', function () {
 Route::get('/client/contact', function () {
     return view('client.pages.contact');
 })->name('client.contact');
-Route::get('/client/detail', function () {
-    return view('client.pages.detail');
-})->name('client.detail');
+
 Route::get('/client/list-product','ProduceController@select')->name('client.list-product');
 
 // 404
 Route::get('/404', function () {
     return view('client.pages.404');
 })->name('client.404');
+
+// Detail
+Route::get('/client/detail','ProduceController@detail' )->name('client.detail');

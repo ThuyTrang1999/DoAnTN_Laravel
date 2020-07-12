@@ -27,11 +27,10 @@ class CreateProducesTable extends Migration
             //$table->foreign('author_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('price');
             $table->string('discout_price');
+            $table->string('top');
             $table->float('rates');
             $table->integer('amount_rate');
-
             $table->string('status');
-
             $table->timestamps();
         });
     }

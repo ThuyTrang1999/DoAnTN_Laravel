@@ -43,13 +43,7 @@
                     
                   </ul>
                 </li>
-                <li><a><i class="fa fa-table"></i>Quản lý loại sản phẩm con<span class="fa fa-chevron-down"></span></a>
-                  <ul class="nav child_menu">
-                  <li><a href="{{route('sub_category.them-moi-sub-category')}}" style="display: none;">Thêm sub category</a></li>
-                    <li><a href="{{route('sub_category.listSubCategory')}}">Danh sách sub category</a></li>
-                    
-                  </ul>
-                </li>
+                
                 <li><a><i class="fa fa-bar-chart-o"></i> Thống kê <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
                     <li><a href="{{route('admin.list-statistical')}}">Xem thống kê</a></li>

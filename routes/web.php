@@ -96,16 +96,16 @@ Route::prefix('product')->group(function(){
 
 
 // sub_category
-Route::prefix('sub_category')->group(function(){
-    Route::name('sub_category.')->group(function(){
-        Route::get('/', 'SubCategoryController@index')->name('listSubCategory');
-        Route::get('/add-sub_category','SubCategoryController@create' )->name('them-moi-sub-category');
-        Route::post('add-sub_category/create','SubCategoryController@store')->name('xu-ly-them-moi');
-        Route::get('cap-nhap/{id}','SubCategoryController@edit')->name('cap-nhat');
-        Route::post('cap-nhap/{id}','SubCategoryController@update')->name('xu-ly-cap-nhat');
-        Route::get('xoa/{id}', 'SubCategoryController@destroy')->name('xoa');
-    });
-});
+// Route::prefix('sub_category')->group(function(){
+//     Route::name('sub_category.')->group(function(){
+//         Route::get('/', 'SubCategoryController@index')->name('listSubCategory');
+//         Route::get('/add-sub_category','SubCategoryController@create' )->name('them-moi-sub-category');
+//         Route::post('add-sub_category/create','SubCategoryController@store')->name('xu-ly-them-moi');
+//         Route::get('cap-nhap/{id}','SubCategoryController@edit')->name('cap-nhat');
+//         Route::post('cap-nhap/{id}','SubCategoryController@update')->name('xu-ly-cap-nhat');
+//         Route::get('xoa/{id}', 'SubCategoryController@destroy')->name('xoa');
+//     });
+// });
 // customer
 
 Route::prefix('customer')->group(function(){

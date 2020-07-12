@@ -21,6 +21,7 @@ class CreateBillDetailsTable extends Migration
             $table->foreign('bill_id')->references('id')->on('bills')->onDelete('cascade');
             $table->integer('produce_id')->unsigned();
             $table->foreign('produce_id')->references('id')->on('produces')->onDelete('cascade');
+            
             $table->integer('status');
             $table->timestamps();
         });

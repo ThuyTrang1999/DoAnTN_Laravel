@@ -3,7 +3,7 @@
 
 body {
 	color: #242424;
-	font-family: 'Rubik', sans-serif;
+	font-family: Roboto,Helvetica,Arial,sans-serif;
 	font-size: 14px;
 	font-style: normal;
 	font-weight: normal;
@@ -246,7 +246,7 @@ textarea {
 /*----------------------------------------*/
 button.li-btn {
 	border: none;
-	background: #0a4b8f;
+	background: #1179e5;
 	color: #ffffff;
 	font-size: 20px;
 	width: 45px;
@@ -266,7 +266,7 @@ button.li-btn:hover {
 a.links, 
 a.links-2, 
 a.review-links {
-	background: #0a4b8f;
+	background: #1179e5;
 	color: #ffffff;
 	display: inline-block;
 	font-family: Montserrat;
@@ -471,7 +471,7 @@ textarea:focus {
 .slider-active .owl-item.active .slider-progress {
 	-webkit-animation: 5000ms ease-in-out 0s normal none 1 running timebar;
 	animation: 10000ms ease-in-out 0s normal none 1 running timebar;
-	background: #0a4b8f;
+	background: #1179e5;
 	height: 5px;
 	left: 0;
 	opacity: 0.8;
@@ -1244,7 +1244,7 @@ textarea:focus {
 /*----------------------------------------*/
 /*Header Top*/
 .header-top {
-	background: #0a4b8f;
+	background: #1179e5;
 	padding: 12px 0;
 	border-bottom: 1px solid #e1e1e1;
 }
@@ -1294,7 +1294,12 @@ ul.ht-menu a:hover {
 }
 .ht-menu > li span {
 	font-size: 14px;
+	color: #fff;
 }
+.ht-menu > li i, .phone-wrap span, .phone-wrap i{
+	color: #fff;
+}
+
 /*Header Top Currency*/
 .currency-selector-wrapper, .language-selector-wrapper {
 	margin-right: 5px;
@@ -1669,7 +1674,7 @@ ul.ht-menu a:hover {
 }
 /*Header Bottom Menu*/
 .header-bottom {
-		background: #0a4b8f;
+		background: #1179e5;
 		margin-bottom: 20px;
 }
 .hb-menu > nav > ul {
@@ -1848,7 +1853,7 @@ ul.ht-menu a:hover {
 	background-repeat: no-repeat;
 	top: auto;
 	left: 0;
-	z-index: 99;
+	z-index: 1000;
 	width: 100%;
 }
 .megamenu-holder .hb-megamenu {
@@ -1871,7 +1876,7 @@ ul.ht-menu a:hover {
 }
 /*Sticky*/
 .header-sticky.sticky {
-	background: #0a4b8ff2;
+	background: #1179e5;
 	left: 0;
 	position: fixed;
 	right: 0;
@@ -2033,7 +2038,7 @@ ul.ht-menu a:hover {
 .li-product-menu > li > a > span {
 	position: relative;
 	font-family: sans-serif;
-	font-size: 28px;
+	font-size: 20px;
 	font-weight: bold;
 	color: #0056b3;
 	text-transform: uppercase;
@@ -2221,6 +2226,8 @@ ul.ht-menu a:hover {
 	line-height: 18px;
 	text-transform: capitalize;
 	text-align: center;
+	font-weight: bold;
+	font-family: inherit;
 }
 .product_desc .product_desc_info .product_name:hover {
   text-decoration: underline;
@@ -2428,7 +2435,7 @@ ul.ht-menu a:hover {
 }
 .product-image {
   position: relative;
-  padding: 15px;
+  /* padding: 15px; */
 }
 .section-title-3 > h2 {
   background: #ffffff none repeat scroll 0 0;
@@ -2591,7 +2598,7 @@ ul.ht-menu a:hover {
 	display: inline-block;
 	position: relative;
 	font-family: sans-serif;
-	font-size: 28px;
+	font-size: 22px;
 	font-weight: bold;
 	color: #0056b3;
 	text-transform: uppercase;
@@ -2680,7 +2687,7 @@ ul.ht-menu a:hover {
 	z-index: 999;
 	position: relative;
 	font-family: sans-serif;
-	font-size: 28px;
+	font-size: 22px;
 	font-weight: bold;
 	color: #0056b3;
 }
@@ -2980,10 +2987,10 @@ text-align: center;
 .category-heading {
 	position: relative;
 	cursor: pointer;
-	background: #0a4b8f;
+	background: #1179e5;
 	height: 55px;
 	border-radius: 3px 3px 0 0;
-	border-bottom: 3px solid #0a4b8f;
+	border-bottom: 3px solid #1179e5;
 }
 .category-heading > h2 {
 	margin: 0;
@@ -5413,6 +5420,7 @@ ul.phone-wrap a:hover{
 }
 button.close span {
     font-size: 22px;
+    color: #626262;
 }
 .page-section {
     margin: 5% auto;
@@ -5433,7 +5441,7 @@ button.close span {
 	width: 100%;
 }
 .sidebar-categores-box{
-	background: #0a4b8f;
+	background: #1179e5;
 	height: 100%;
 }
 .shop.header-top{

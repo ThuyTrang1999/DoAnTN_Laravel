@@ -68,18 +68,18 @@
                                 <h4 class="login-title">Login</h4>
                                 <div class="row">
                                     <div class="col-md-12 col-12 mb-20">
-                                        <label><i class="fa fa-user fa-2x"></i> Username</label>
-                                        <input class="mb-0 form-control" type="email" placeholder="Username">
+                                        <label><i class="fa fa-user fa-2x"></i> Tên đăng nhập</label>
+                                        <input class="mb-0 form-control" type="text" placeholder="Username" name="user_name">
                                     </div>
                                     <div class="col-12 mb-20">
-                                        <label><i class="fa fa-lock fa-2x"></i> Password</label>
-                                        <input class="mb-0 form-control" type="password" placeholder="Password">
+                                        <label><i class="fa fa-lock fa-2x"></i> Mật khẩu</label>
+                                        <input class="mb-0 form-control" type="password" placeholder="Password" name="password">
                                     </div>
                                     <div class="col-md-8">
-
+                                  
                                     </div>
                                     <div class="col-md-4 mt-10 mb-20 text-left text-md-right">
-                                        <a href="#"> Forgotten pasward?</a>
+                                        <a href="#"> Quên mật khẩu??</a>
                                     </div>
                                     <div class="col-md-12">
                                         <button type="submit" class="form-control register-button mt-0 ">Login</button>

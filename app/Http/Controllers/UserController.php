@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\user;
 
@@ -41,17 +41,26 @@ class UserController extends Controller
          $addUser = new user;
          $addUser->user_name = $request->user_name;
          $addUser->password = $request->password;
-         $addUser->role = $request->role;
          $addUser->first_name = $request->first_name;
          $addUser->last_name = $request->last_name;
+         $get_img_avt = $request->file('avatarFile');
          $addUser->email = $request->email;
          $addUser->phone = $request->phone;
          $addUser->address = $request->address;
-         $addUser->num_order = "null";
+         $addUser->num_order = "1";
          $addUser->gender = $request->gender;
          $addUser->birthday = $request->birthday;
+         $addUser->role = $request->role;
          $addUser->status = $request->status;
-       
+         if($get_img_avt){
+            $new_img_avt = time() . "_" . rand(0,9999999) . "_" . md5(rand(0,9999999)) . "." .$request->avatarFile->getClientOriginalName();
+            $get_img_avt->move('upload/avatar',$new_img_avt);
+            $addUser->avatar = $new_img_avt;
+            $addUser->save();
+        }
+        
+         
+
          $addUser->save();
          return redirect()->route('user.listUser')->with(['flash_message' => 'Thêm User thành công ']);
     }
@@ -91,16 +100,25 @@ class UserController extends Controller
          $addUser = user::find($id);
          $addUser->user_name = $request->user_name;
          $addUser->password = $request->password;
-         $addUser->role = $request->role;
          $addUser->first_name = $request->first_name;
          $addUser->last_name = $request->last_name;
+         $set_img_avt=$request->file('avatarFile');
+         if(set_img_avt){
+            $new_img_avt=time() . "_" . rand(0,9999999) . "_" . md5(rand(0,9999999)) . "." .$request->avatarFile->getClientOriginalName();
+            $set_img_avt->move('upload/avatar', $new_img_avt);
+            $addUser->avatar = $new_img_avt;
+            $addUser->save();
+        }
          $addUser->email = $request->email;
          $addUser->phone = $request->phone;
          $addUser->address = $request->address;
-         $addUser->num_order = "null";
+         $addUser->num_order = "0";
          $addUser->gender = $request->gender;
          $addUser->birthday = $request->birthday;
+         $addUser->role = $request->role;
          $addUser->status = $request->status;
+         
+
          $addUser->save();
          return redirect()->route('user.listUser')->with(['flash_message' => 'Cập nhật User thành công ']);
     }

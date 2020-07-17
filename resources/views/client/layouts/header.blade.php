@@ -25,7 +25,6 @@
                       <div class="col-lg-9 col-md-8">
                           <div class="header-top-right">
                               <ul class="ht-menu">
-
                                   <!-- Begin Currency Area -->
                                   <li>
                                       <a href="#" id="frm_register">
@@ -45,14 +44,21 @@
                                           <span class="language-selector-wrapper" data-toggle="modal"
                                               data-target="#loginModal">Đăng nhập</span>
                                           <!-- Modal Login -->
-                                   
-                                         @include('client.layouts.login')
+
+                                          @include('client.layouts.login')
                                           <!-- End  modal Login-->
                                       </a>
                                   </li>
                                   <!-- Language Area End Here -->
-
-
+                                  <li style="display: none;">
+                                      <div class="ht-setting-trigger is-active"><span>Đăng nhập thành công</span></div>
+                                      <div class="setting ht-setting" style="display: block;">
+                                          <ul class="ht-setting-list">
+                                              <li><a href="login-register.html">My Account</a></li>
+                                              <li><a href="login-register.html">Đăng xuất</a></li>
+                                          </ul>
+                                      </div>
+                                  </li>
                               </ul>
                           </div>
                       </div>
@@ -78,7 +84,7 @@
                       <div class="col-lg-9 pl-0 ml-sm-15 ml-xs-15">
                           <!-- Begin Header Middle Searchbox Area -->
                           <form action="#" class="hm-searchbox">
-                              <input type="text" placeholder="Enter your search key ...">
+                              <input type="text" placeholder="Nhập khóa tìm kiếm của bạn ...">
                               <button class="li-btn" type="submit"><i class="fa fa-search"></i></button>
                           </form>
                           <!-- Header Middle Searchbox Area End Here -->
@@ -89,8 +95,8 @@
                                   <li class="hm-minicart">
                                       <div class="hm-minicart-trigger">
                                           <span class="item-icon"></span>
-                                          <span class="item-text">£80.00
-                                              <span class="cart-item-count">2</span>
+                                          <span class="item-text">80.00
+                                              <span class="cart-item-count">0</span>
                                           </span>
                                       </div>
                                       <span></span>
@@ -123,7 +129,7 @@
                                                   </button>
                                               </li>
                                           </ul>
-                                          <p class="minicart-total">SUBTOTAL: <span>£80.00</span></p>
+                                          <p class="minicart-total">Tổng tiền: <span>80.00</span></p>
                                           <div class="minicart-button">
                                               <a href="{{route('client.cart')}}"
                                                   class="li-button li-button-fullwidth li-button-dark">
@@ -144,7 +150,7 @@
           </div>
           <!-- Header Middle Area End Here -->
           <!-- Begin Header Bottom Area -->
-         
+
           <!-- Header Bottom Area End Here -->
           <!-- Begin Mobile Menu Area -->
           <div class="mobile-menu-area d-lg-none d-xl-none col-12">

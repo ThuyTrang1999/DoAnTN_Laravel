@@ -90,9 +90,6 @@ class ProduceController extends Controller
         $listProduce->top ="0";
         $listProduce->save();
 
-
-
-
         $listImg ->url = 'upload/' . $imageName;
         $listImg->status = $request->status;
         $listImg->style = '1';
@@ -162,8 +159,16 @@ class ProduceController extends Controller
 
     // show detail
     public function detail(Request $req){
-        $sanpham=produce::where('id',$req->id)->first();
-        return view('client.pages.detail', compact('sanpham'));
+        
+        $singleProduct=DB::table('produces')->join('imgs', 'produces.id', '=', 'imgs.produce_id')->where('produces.id', $req->id)->first();
+
+        $related_product=DB::table('produces')->join('imgs', 'produces.id', '=', 'imgs.produce_id')
+        ->where('produces.category_id', $singleProduct->category_id)->whereNotIn('produces.id', [$req->id])->get();
+       
+        // dd($singleProduct);
+        // dd($related_product);
+        // echo $related_product; 
+
+        return view('client.pages.detail', compact('singleProduct', 'related_product'));
     }
- 
 }

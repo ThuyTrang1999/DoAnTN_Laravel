@@ -33,15 +33,21 @@
                                                 </select>
                                             </div>
                                             <div class="col-md-6 mb-20">
-                                                <label>Email</label>
-                                                <input class="mb-0" type="email" name="cus_email"
-                                                    placeholder="Email Address">
-                                            </div>
-                                            <div class="col-md-6 mb-20">
                                                 <label>Số điện thoại</label>
                                                 <input class="mb-0" type="phone" name="cus_phone"
                                                     placeholder="Email Address">
                                             </div>
+                                            <div class="col-md-6 mb-20">
+                                                <label>Hình đại diện</label>
+                                                <input type="file" name="Avatar" style="border: none;">
+                                                <!-- <img src="#" alt="Ảnh đại diện"> -->
+                                            </div>
+                                            <div class="col-md-12 mb-20">
+                                                <label>Email</label>
+                                                <input class="mb-0" type="email" name="cus_email"
+                                                    placeholder="Email Address">
+                                            </div>
+                                           
                                             <div class="col-md-12 mb-20">
                                                 <label>Địa chỉ</label>
                                                 <input class="mb-0" type="email" name="cus_address"

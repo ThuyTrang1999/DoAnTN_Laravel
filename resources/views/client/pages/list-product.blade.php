@@ -63,7 +63,7 @@ Trang danh sách
                                             <div class="product-image p-5">
                                                 <a href="{{route('client.detail')}}">
                                                    
-                                                    <img src="../upload/{{ $lproduct->url}}" alt="Li's Product Image" style="{{$lproduct->style}}">
+                                                    <img src="../upload/product/{{ $lproduct->url}}" alt="Li's Product Image" style="{{$lproduct->style}}">
                                                 </a>
                                                 <!-- <span class="sticker">New</span> -->
                                             </div>

@@ -48,11 +48,7 @@ Danh sách user
                                                 <tr role="row">
                                                     <th class="sorting" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
-                                                        style="width: 80px;">Username</th>
-
-                                                    <th class="sorting" tabindex="0"
-                                                        aria-controls="datatable-responsive" rowspan="1" colspan="1"
-                                                        style="width: 81px;">Role
+                                                        style="width: 80px;">Username
                                                     </th>
                                                     <th class="sorting" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
@@ -61,9 +57,14 @@ Danh sách user
                                                     </th>
                                                     <th class="sorting" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
+                                                        style="width: 34px;"
+                                                        aria-label="Age: activate to sort column ascending">Last-name
+                                                    </th>
+                                                    <th class="sorting" tabindex="0"
+                                                        aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 74px;"
                                                         aria-label="Start date: activate to sort column ascending">
-                                                        Last-name</th>
+                                                        Hình ảnh</th>
                                                     <th class="sorting" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 60px;"
@@ -97,6 +98,10 @@ Danh sách user
                                                     </th>
                                                     <th class="sorting" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
+                                                        style="width: 81px;">Role
+                                                    </th>
+                                                    <th class="sorting" tabindex="0"
+                                                        aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 166px;"
                                                         aria-label="E-mail: activate to sort column ascending">Status
                                                     </th>
@@ -121,15 +126,19 @@ Danh sách user
                                                 @foreach ($listUsers as $ur)
                                                 <tr class="odd cus-{{$ur -> id}}">
                                                     <td>{{$ur -> user_name}}</td>
-                                                    <td>{{$ur -> role}}</td>
                                                     <td>{{$ur -> first_name}}</td>
                                                     <td>{{$ur -> last_name}}</td>
+                                                    <td class="text-center">
+                                                        <img src="upload/avatar/{{$ur->avatar}}" alt=""
+                                                            style="height: 50px; width: 100px;">
+                                                    </td>
                                                     <td>{{$ur -> email}}</td>
                                                     <td>{{$ur -> phone}}</td>
                                                     <td>{{$ur -> address}}</td>
                                                     <td>{{$ur -> num_order}}</td>
                                                     <td>{{$ur -> gender}}</td>
                                                     <td>{{$ur -> birthday}}</td>
+                                                    <td>{{$ur -> role}}</td>
                                                     <td>{{$ur -> status}}</td>
                                                     <td>{{$ur -> created_at}}</td>
                                                     <td>{{$ur -> updated_at}}</td>

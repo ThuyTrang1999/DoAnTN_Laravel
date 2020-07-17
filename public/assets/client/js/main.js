@@ -87,6 +87,11 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
 		autoHeight: true,
 		lazyLoad: true
 	});
+	$(".related").owlCarousel({
+		loop: false,
+		
+	});
+	
 /*----------------------------------------*/
 /* 06. Li's Product Activision
 /*----------------------------------------*/

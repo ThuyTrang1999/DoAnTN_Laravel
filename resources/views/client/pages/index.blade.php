@@ -16,7 +16,7 @@ Home
             <div class="col-lg-12">
                 <div class="li-product-tab">
                     <ul class="nav li-product-menu">
-                        <li><a class="active" data-toggle="tab" href="#"><span>Ưu đãi hấp dẩn</span></a></li>
+                        <li><a class="active" data-toggle="tab" href="#"><span>Ưu đãi hấp dẫn</span></a></li>
 
                         </li>
                     </ul>
@@ -29,13 +29,13 @@ Home
                 <div class="row">
                     <div class="product-active owl-carousel ">
                         @foreach($Hot_KM as $pKM)
-                        <div class="col-lg-12 ">
+                        <div class="col-lg-12 col-md-4 col-sm-6">
                             <!-- single-product-wrap start -->
-                            <div class="single-product-wrap wow fadeInLeft single_overplay" data-wow-duration="2s">
-                                <div class="product-image">
-                                    <a href="{{route('client.detail')}}">
-                                        <img src="upload/{{$pKM->url}}" alt="Li's Product Image"
-                                            style="{{$pKM->style}}">
+                            <div class="single-product-wrap">
+                                <div class="product-image p-5">
+                                    <a href="{{route('client.detail',['id'=>$pKM->id])}}">
+
+                                        <img src="upload/product/{{$pKM->url}}" alt="Li's Product Image">
                                     </a>
                                     <span class="sticker">New</span>
                                 </div>
@@ -58,11 +58,8 @@ Home
                                         <h4><a class="product_name" href="{{route('client.detail')}}">{{$pKM->name}}</a>
                                         </h4>
                                         <div class="price-box">
-                                            <span class="new-price">{{$pKM->discout_price}}</span>
-                                            <span class="old-price">{{$pKM->price}}</span>
-                                            <!-- <span class="discount-percentage">-7%</span> -->
+                                            <span class="new-price">{{$pKM->price}}/{{$pKM->unit}}</span>
                                         </div>
-
                                     </div>
                                     <div class="add-actions action__overplay">
                                         <ul class="add-actions-link">
@@ -81,7 +78,8 @@ Home
                                     </div>
                                 </div>
                             </div>
-                            <!-- single-product-wrap wow fadeInLeft end -->
+                            <!-- single-product-wrap end -->
+
                         </div>
                         @endforeach
                     </div>
@@ -117,8 +115,7 @@ Home
                             <div class="single-product-wrap wow fadeInLeft single_overplay" data-wow-duration="2s">
                                 <div class="product-image">
                                     <a href="{{route('client.detail')}}">
-                                        <img src="upload/{{$pTop->url}}" alt="Li's Product Image"
-                                            style="{{$pTop->style}}">
+                                        <img src="upload/{{$pTop->url}}" alt="Li's Product Image">
                                     </a>
                                     <span class="sticker">New</span>
                                 </div>
@@ -366,8 +363,7 @@ Home
                             <div class="single-product-wrap wow fadeInLeft single_overplay" data-wow-duration="2s">
                                 <div class="product-image">
                                     <a href="{{route('client.detail')}}">
-                                        <img src="upload/{{ $pTop->url }}" alt="Li's Product Image"
-                                            style="{{$pTop->style}}">
+                                        <img src="upload/{{ $pTop->url }}" alt="Li's Product Image">
                                     </a>
                                     <span class="sticker">New</span>
                                 </div>
@@ -448,768 +444,257 @@ Home
     </div>
 </div>
 <!-- Li's Static Home Area End Here -->
-<!-- Begin Li's Trending Product Area -->
-<section class="product-area li-trending-product pt-60 pb-45">
+<!-- Begin Li's Phone Product Area -->
+
+
+<section class="product-area li-laptop-product mt-30  pb-45">
     <div class="container">
         <div class="row">
-            <!-- Begin Li's Tab Menu Area -->
+            <!-- Begin Li's Section Area -->
             <div class="col-lg-12">
-                <div class="li-product-tab li-trending-product-tab">
+                <div class="li-section-title">
                     <h2>
-                        <span>Sản phẩm dành cho bạn</span>
+                        <span>Điện thoại</span>
                     </h2>
                     <ul class="li-sub-category-list">
-                        <li><a href="{{ route('client.list-product')}}">Xem thêm</a></li>
+                        <li class="active"><a href="shop-left-sidebar.html">Prime Video</a></li>
+                        <li><a href="shop-left-sidebar.html">Computers</a></li>
+                        <li><a href="shop-left-sidebar.html">Electronics</a></li>
                     </ul>
-
                 </div>
+                <div class="row">
+                    <div class="product-active owl-carousel">
+                        @foreach($phoneProduct as $phonePro)
+                        <div class="col-lg-12 col-md-4 col-sm-6">
+                            <!-- single-product-wrap start -->
+                            <div class="single-product-wrap">
+                                <div class="product-image">
+                                    <a href="{{route('client.detail',['id'=>$phonePro->id])}}">
 
-                <div class="shop-products-wrapper">
-                    <div class="tab-content">
-                        <div id="grid-view" class="tab-pane fade active show" role="tabpanel">
-                            <div class="product-area shop-product-area">
-                                <div class="row">
-                                    @foreach($prouctSum as $lproductSum)
-                                    <div class="col-lg-3 col-md-4 col-sm-6 mt-40">
-                                        <!-- single-product-wrap start -->
-                                        <div class="single-product-wrap">
-                                            <div class="product-image p-5">
-                                                <a href="{{route('client.detail')}}">
-
-                                                    <img src="upload/{{$lproductSum->url}}" alt="Li's Product Image"
-                                                        style="{{$lproductSum->style}}">
-                                                </a>
-                                                <span class="sticker">New</span>
-                                            </div>
-                                            <div class="product_desc">
-                                                <div class="product_desc_info">
-                                                    <div class="product-review">
-                                                        <h5 class="manufacturer">
-                                                            <a href="{{route('client.detail')}}">Graphic Corner</a>
-                                                        </h5>
-                                                        <div class="rating-box">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <h4><a class="product_name"
-                                                            href="{{route('client.detail')}}">{{$lproductSum->name}}</a>
-                                                    </h4>
-                                                    <div class="price-box">
-                                                        <span class="new-price">{{$lproductSum->price}}</span>
-                                                    </div>
-                                                </div>
-                                                <div class="add-actions action__overplay">
-                                                    <ul class="add-actions-link">
-                                                        <li class="add-cart heart"><a class="links-details "
-                                                                href="wishlist.html"><i class="fa fa-heart"></i></a>
-                                                        </li>
-                                                        <li class="add-cart "><a href="#" title="quick view"
-                                                                class="quick-view-btn" data-toggle="modal"
-                                                                data-target="#exampleModalCenter"><i
-                                                                    class="fa fa-eye"></i></a></li>
-
-                                                        <li class="add-cart active "><a href="#"><i
-                                                                    class="fa fa-cart-arrow-down fa-7x"
-                                                                    aria-hidden="true"></i></a>
-                                                        </li>
-                                                    </ul>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- single-product-wrap end -->
-
-                                    </div>
-                                    @endforeach
+                                        <img src="upload/product/{{$phonePro->url}}" alt="Li's Product Image">
+                                    </a>
+                                    <span class="sticker">New</span>
                                 </div>
-                            </div>
-                        </div>
-                        <div id="list-view" class="tab-pane product-list-view fade" role="tabpanel">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="row product-layout-list">
-                                        <div class="col-lg-3 col-md-5 ">
-                                            <div class="product-image">
-                                                <a href="{{route('client.detail')}}">
-                                                    <img src="{{asset('assets/client/images/product/large-size/12.jpg')}}"
-                                                        alt="Li's Product Image">
-                                                </a>
-                                                <span class="sticker">New</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-5 col-md-7">
-                                            <div class="product_desc">
-                                                <div class="product_desc_info">
-                                                    <div class="product-review">
-                                                        <h5 class="manufacturer">
-                                                            <a href="product-details.html">Graphic Corner</a>
-                                                        </h5>
-                                                        <div class="rating-box">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <h4><a class="product_name"
-                                                            href="{{route('client.detail')}}">Hummingbird printed
-                                                            t-shirt</a></h4>
-                                                    <div class="price-box">
-                                                        <span class="new-price">$46.80</span>
-                                                    </div>
-                                                    <p>Beach Camera Exclusive Bundle - Includes Two Samsung Radiant 360
-                                                        R3 Wi-Fi Bluetooth Speakers. Fill The Entire Room With Exquisite
-                                                        Sound via Ring Radiator Technology. Stream And Control R3
-                                                        Speakers Wirelessly With Your Smartphone. Sophisticated, Modern
-                                                        Desig</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="shop-add-action mb-xs-30">
-                                                <ul class="add-actions-link">
-                                                    <li class="add-cart"><a href="#">Add to cart</a></li>
-                                                    <li class="wishlist"><a href="wishlist.html"><i
-                                                                class="fa fa-heart"></i>Add to wishlist</a></li>
-                                                    <li><a class="quick-view" data-toggle="modal"
-                                                            data-target="#exampleModalCenter" href="#"><i
-                                                                class="fa fa-eye"></i>Quick view</a></li>
+                                <div class="product_desc">
+                                    <div class="product_desc_info">
+                                        <div class="product-review">
+                                            <h5 class="manufacturer">
+                                                <a href="{{route('client.detail')}}">Graphic Corner</a>
+                                            </h5>
+                                            <div class="rating-box">
+                                                <ul class="rating">
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li class="no-star"><i class="fa fa-star"></i></li>
+                                                    <li class="no-star"><i class="fa fa-star"></i></li>
                                                 </ul>
                                             </div>
+                                        </div>
+                                        <h4><a class="product_name"
+                                                href="{{route('client.detail')}}">{{$phonePro->name}}</a>
+                                        </h4>
+                                        <div class="price-box">
+                                            <span
+                                                class="new-price">{{$phonePro->price}}/{{$phonePro->unit}}</span>
                                         </div>
                                     </div>
-                                    <div class="row product-layout-list">
-                                        <div class="col-lg-3 col-md-5 ">
-                                            <div class="product-image">
-                                                <a href="{{route('client.detail')}}">
-                                                    <img src="{{asset('assets/client/images/product/large-size/11.jpg')}}"
-                                                        alt="Li's Product Image">
-                                                </a>
-                                                <span class="sticker">New</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-5 col-md-7">
-                                            <div class="product_desc">
-                                                <div class="product_desc_info">
-                                                    <div class="product-review">
-                                                        <h5 class="manufacturer">
-                                                            <a href="product-details.html">Graphic Corner</a>
-                                                        </h5>
-                                                        <div class="rating-box">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <h4><a class="product_name"
-                                                            href="{{route('client.detail')}}">Hummingbird printed
-                                                            t-shirt</a></h4>
-                                                    <div class="price-box">
-                                                        <span class="new-price">$46.80</span>
-                                                    </div>
-                                                    <p>Beach Camera Exclusive Bundle - Includes Two Samsung Radiant 360
-                                                        R3 Wi-Fi Bluetooth Speakers. Fill The Entire Room With Exquisite
-                                                        Sound via Ring Radiator Technology. Stream And Control R3
-                                                        Speakers Wirelessly With Your Smartphone. Sophisticated, Modern
-                                                        Desig</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="shop-add-action mb-xs-30">
-                                                <ul class="add-actions-link">
-                                                    <li class="add-cart"><a href="#">Add to cart</a></li>
-                                                    <li class="wishlist"><a href="wishlist.html"><i
-                                                                class="fa fa-heart"></i>Add to wishlist</a></li>
-                                                    <li><a class="quick-view" data-toggle="modal"
-                                                            data-target="#exampleModalCenter" href="#"><i
-                                                                class="fa fa-eye"></i>Quick view</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row product-layout-list">
-                                        <div class="col-lg-3 col-md-5 ">
-                                            <div class="product-image">
-                                                <a href="{{route('client.detail')}}">
-                                                    <img src="{{asset('assets/client/images/product/large-size/10.jpg')}}"
-                                                        alt="Li's Product Image">
-                                                </a>
-                                                <span class="sticker">New</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-5 col-md-7">
-                                            <div class="product_desc">
-                                                <div class="product_desc_info">
-                                                    <div class="product-review">
-                                                        <h5 class="manufacturer">
-                                                            <a href="product-details.html">Graphic Corner</a>
-                                                        </h5>
-                                                        <div class="rating-box">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <h4><a class="product_name"
-                                                            href="{{route('client.detail')}}">Hummingbird printed
-                                                            t-shirt</a></h4>
-                                                    <div class="price-box">
-                                                        <span class="new-price">$46.80</span>
-                                                    </div>
-                                                    <p>Beach Camera Exclusive Bundle - Includes Two Samsung Radiant 360
-                                                        R3 Wi-Fi Bluetooth Speakers. Fill The Entire Room With Exquisite
-                                                        Sound via Ring Radiator Technology. Stream And Control R3
-                                                        Speakers Wirelessly With Your Smartphone. Sophisticated, Modern
-                                                        Desig</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="shop-add-action mb-xs-30">
-                                                <ul class="add-actions-link">
-                                                    <li class="add-cart"><a href="#">Add to cart</a></li>
-                                                    <li class="wishlist"><a href="wishlist.html"><i
-                                                                class="fa fa-heart"></i>Add to wishlist</a></li>
-                                                    <li><a class="quick-view" data-toggle="modal"
-                                                            data-target="#exampleModalCenter" href="#"><i
-                                                                class="fa fa-eye"></i>Quick view</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row product-layout-list">
-                                        <div class="col-lg-3 col-md-5 ">
-                                            <div class="product-image">
-                                                <a href="{{route('client.detail')}}">
-                                                    <img src="{{asset('assets/client/images/product/large-size/9.jpg')}}"
-                                                        alt="Li's Product Image">
-                                                </a>
-                                                <span class="sticker">New</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-5 col-md-7">
-                                            <div class="product_desc">
-                                                <div class="product_desc_info">
-                                                    <div class="product-review">
-                                                        <h5 class="manufacturer">
-                                                            <a href="product-details.html">Graphic Corner</a>
-                                                        </h5>
-                                                        <div class="rating-box">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <h4><a class="product_name"
-                                                            href="{{route('client.detail')}}">Hummingbird printed
-                                                            t-shirt</a></h4>
-                                                    <div class="price-box">
-                                                        <span class="new-price">$46.80</span>
-                                                    </div>
-                                                    <p>Beach Camera Exclusive Bundle - Includes Two Samsung Radiant 360
-                                                        R3 Wi-Fi Bluetooth Speakers. Fill The Entire Room With Exquisite
-                                                        Sound via Ring Radiator Technology. Stream And Control R3
-                                                        Speakers Wirelessly With Your Smartphone. Sophisticated, Modern
-                                                        Desig</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="shop-add-action mb-xs-30">
-                                                <ul class="add-actions-link">
-                                                    <li class="add-cart"><a href="#">Add to cart</a></li>
-                                                    <li class="wishlist"><a href="wishlist.html"><i
-                                                                class="fa fa-heart"></i>Add to wishlist</a></li>
-                                                    <li><a class="quick-view" data-toggle="modal"
-                                                            data-target="#exampleModalCenter" href="#"><i
-                                                                class="fa fa-eye"></i>Quick view</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row product-layout-list">
-                                        <div class="col-lg-3 col-md-5 ">
-                                            <div class="product-image">
-                                                <a href="{{route('client.detail')}}">
-                                                    <img src="{{asset('assets/client/images/product/large-size/8.jpg')}}"
-                                                        alt="Li's Product Image">
-                                                </a>
-                                                <span class="sticker">New</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-5 col-md-7">
-                                            <div class="product_desc">
-                                                <div class="product_desc_info">
-                                                    <div class="product-review">
-                                                        <h5 class="manufacturer">
-                                                            <a href="product-details.html">Graphic Corner</a>
-                                                        </h5>
-                                                        <div class="rating-box">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <h4><a class="product_name"
-                                                            href="{{route('client.detail')}}">Hummingbird printed
-                                                            t-shirt</a></h4>
-                                                    <div class="price-box">
-                                                        <span class="new-price">$46.80</span>
-                                                    </div>
-                                                    <p>Beach Camera Exclusive Bundle - Includes Two Samsung Radiant 360
-                                                        R3 Wi-Fi Bluetooth Speakers. Fill The Entire Room With Exquisite
-                                                        Sound via Ring Radiator Technology. Stream And Control R3
-                                                        Speakers Wirelessly With Your Smartphone. Sophisticated, Modern
-                                                        Desig</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="shop-add-action mb-xs-30">
-                                                <ul class="add-actions-link">
-                                                    <li class="add-cart"><a href="#">Add to cart</a></li>
-                                                    <li class="wishlist"><a href="wishlist.html"><i
-                                                                class="fa fa-heart"></i>Add to wishlist</a></li>
-                                                    <li><a class="quick-view" data-toggle="modal"
-                                                            data-target="#exampleModalCenter" href="#"><i
-                                                                class="fa fa-eye"></i>Quick view</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row product-layout-list">
-                                        <div class="col-lg-3 col-md-5 ">
-                                            <div class="product-image">
-                                                <a href="{{route('client.detail')}}">
-                                                    <img src="{{asset('assets/client/images/product/large-size/7.jpg')}}"
-                                                        alt="Li's Product Image">
-                                                </a>
-                                                <span class="sticker">New</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-5 col-md-7">
-                                            <div class="product_desc">
-                                                <div class="product_desc_info">
-                                                    <div class="product-review">
-                                                        <h5 class="manufacturer">
-                                                            <a href="product-details.html">Graphic Corner</a>
-                                                        </h5>
-                                                        <div class="rating-box">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <h4><a class="product_name"
-                                                            href="{{route('client.detail')}}">Hummingbird printed
-                                                            t-shirt</a></h4>
-                                                    <div class="price-box">
-                                                        <span class="new-price">$46.80</span>
-                                                    </div>
-                                                    <p>Beach Camera Exclusive Bundle - Includes Two Samsung Radiant 360
-                                                        R3 Wi-Fi Bluetooth Speakers. Fill The Entire Room With Exquisite
-                                                        Sound via Ring Radiator Technology. Stream And Control R3
-                                                        Speakers Wirelessly With Your Smartphone. Sophisticated, Modern
-                                                        Desig</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="shop-add-action mb-xs-30">
-                                                <ul class="add-actions-link">
-                                                    <li class="add-cart"><a href="#">Add to cart</a></li>
-                                                    <li class="wishlist"><a href="wishlist.html"><i
-                                                                class="fa fa-heart"></i>Add to wishlist</a></li>
-                                                    <li><a class="quick-view" data-toggle="modal"
-                                                            data-target="#exampleModalCenter" href="#"><i
-                                                                class="fa fa-eye"></i>Quick view</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row product-layout-list">
-                                        <div class="col-lg-3 col-md-5 ">
-                                            <div class="product-image">
-                                                <a href="{{route('client.detail')}}">
-                                                    <img src="{{asset('assets/client/images/product/large-size/6.jpg')}}"
-                                                        alt="Li's Product Image">
-                                                </a>
-                                                <span class="sticker">New</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-5 col-md-7">
-                                            <div class="product_desc">
-                                                <div class="product_desc_info">
-                                                    <div class="product-review">
-                                                        <h5 class="manufacturer">
-                                                            <a href="product-details.html">Graphic Corner</a>
-                                                        </h5>
-                                                        <div class="rating-box">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <h4><a class="product_name"
-                                                            href="{{route('client.detail')}}">Hummingbird printed
-                                                            t-shirt</a></h4>
-                                                    <div class="price-box">
-                                                        <span class="new-price">$46.80</span>
-                                                    </div>
-                                                    <p>Beach Camera Exclusive Bundle - Includes Two Samsung Radiant 360
-                                                        R3 Wi-Fi Bluetooth Speakers. Fill The Entire Room With Exquisite
-                                                        Sound via Ring Radiator Technology. Stream And Control R3
-                                                        Speakers Wirelessly With Your Smartphone. Sophisticated, Modern
-                                                        Desig</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="shop-add-action mb-xs-30">
-                                                <ul class="add-actions-link">
-                                                    <li class="add-cart"><a href="#">Add to cart</a></li>
-                                                    <li class="wishlist"><a href="wishlist.html"><i
-                                                                class="fa fa-heart"></i>Add to wishlist</a></li>
-                                                    <li><a class="quick-view" data-toggle="modal"
-                                                            data-target="#exampleModalCenter" href="#"><i
-                                                                class="fa fa-eye"></i>Quick view</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row product-layout-list">
-                                        <div class="col-lg-3 col-md-5 ">
-                                            <div class="product-image">
-                                                <a href="{{route('client.detail')}}">
-                                                    <img src="{{asset('assets/client/images/product/large-size/5.jpg')}}"
-                                                        alt="Li's Product Image">
-                                                </a>
-                                                <span class="sticker">New</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-5 col-md-7">
-                                            <div class="product_desc">
-                                                <div class="product_desc_info">
-                                                    <div class="product-review">
-                                                        <h5 class="manufacturer">
-                                                            <a href="product-details.html">Graphic Corner</a>
-                                                        </h5>
-                                                        <div class="rating-box">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <h4><a class="product_name"
-                                                            href="{{route('client.detail')}}">Hummingbird printed
-                                                            t-shirt</a></h4>
-                                                    <div class="price-box">
-                                                        <span class="new-price">$46.80</span>
-                                                    </div>
-                                                    <p>Beach Camera Exclusive Bundle - Includes Two Samsung Radiant 360
-                                                        R3 Wi-Fi Bluetooth Speakers. Fill The Entire Room With Exquisite
-                                                        Sound via Ring Radiator Technology. Stream And Control R3
-                                                        Speakers Wirelessly With Your Smartphone. Sophisticated, Modern
-                                                        Desig</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="shop-add-action mb-xs-30">
-                                                <ul class="add-actions-link">
-                                                    <li class="add-cart"><a href="#">Add to cart</a></li>
-                                                    <li class="wishlist"><a href="wishlist.html"><i
-                                                                class="fa fa-heart"></i>Add to wishlist</a></li>
-                                                    <li><a class="quick-view" data-toggle="modal"
-                                                            data-target="#exampleModalCenter" href="#"><i
-                                                                class="fa fa-eye"></i>Quick view</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row product-layout-list">
-                                        <div class="col-lg-3 col-md-5 ">
-                                            <div class="product-image">
-                                                <a href="{{route('client.detail')}}">
-                                                    <img src="{{asset('assets/client/images/product/large-size/4.jpg')}}"
-                                                        alt="Li's Product Image">
-                                                </a>
-                                                <span class="sticker">New</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-5 col-md-7">
-                                            <div class="product_desc">
-                                                <div class="product_desc_info">
-                                                    <div class="product-review">
-                                                        <h5 class="manufacturer">
-                                                            <a href="product-details.html">Graphic Corner</a>
-                                                        </h5>
-                                                        <div class="rating-box">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <h4><a class="product_name"
-                                                            href="{{route('client.detail')}}">Hummingbird printed
-                                                            t-shirt</a></h4>
-                                                    <div class="price-box">
-                                                        <span class="new-price">$46.80</span>
-                                                    </div>
-                                                    <p>Beach Camera Exclusive Bundle - Includes Two Samsung Radiant 360
-                                                        R3 Wi-Fi Bluetooth Speakers. Fill The Entire Room With Exquisite
-                                                        Sound via Ring Radiator Technology. Stream And Control R3
-                                                        Speakers Wirelessly With Your Smartphone. Sophisticated, Modern
-                                                        Desig</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="shop-add-action mb-xs-30">
-                                                <ul class="add-actions-link">
-                                                    <li class="add-cart"><a href="#">Add to cart</a></li>
-                                                    <li class="wishlist"><a href="wishlist.html"><i
-                                                                class="fa fa-heart"></i>Add to wishlist</a></li>
-                                                    <li><a class="quick-view" data-toggle="modal"
-                                                            data-target="#exampleModalCenter" href="#"><i
-                                                                class="fa fa-eye"></i>Quick view</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row product-layout-list">
-                                        <div class="col-lg-3 col-md-5 ">
-                                            <div class="product-image">
-                                                <a href="{{route('client.detail')}}">
-                                                    <img src="{{asset('assets/client/images/product/large-size/3.jpg')}}"
-                                                        alt="Li's Product Image">
-                                                </a>
-                                                <span class="sticker">New</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-5 col-md-7">
-                                            <div class="product_desc">
-                                                <div class="product_desc_info">
-                                                    <div class="product-review">
-                                                        <h5 class="manufacturer">
-                                                            <a href="product-details.html">Graphic Corner</a>
-                                                        </h5>
-                                                        <div class="rating-box">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <h4><a class="product_name"
-                                                            href="{{route('client.detail')}}">Hummingbird printed
-                                                            t-shirt</a></h4>
-                                                    <div class="price-box">
-                                                        <span class="new-price">$46.80</span>
-                                                    </div>
-                                                    <p>Beach Camera Exclusive Bundle - Includes Two Samsung Radiant 360
-                                                        R3 Wi-Fi Bluetooth Speakers. Fill The Entire Room With Exquisite
-                                                        Sound via Ring Radiator Technology. Stream And Control R3
-                                                        Speakers Wirelessly With Your Smartphone. Sophisticated, Modern
-                                                        Desig</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="shop-add-action mb-xs-30">
-                                                <ul class="add-actions-link">
-                                                    <li class="add-cart"><a href="#">Add to cart</a></li>
-                                                    <li class="wishlist"><a href="wishlist.html"><i
-                                                                class="fa fa-heart"></i>Add to wishlist</a></li>
-                                                    <li><a class="quick-view" data-toggle="modal"
-                                                            data-target="#exampleModalCenter" href="#"><i
-                                                                class="fa fa-eye"></i>Quick view</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row product-layout-list">
-                                        <div class="col-lg-3 col-md-5 ">
-                                            <div class="product-image">
-                                                <a href="{{route('client.detail')}}">
-                                                    <img src="{{asset('assets/client/images/product/large-size/2.jpg')}}"
-                                                        alt="Li's Product Image">
-                                                </a>
-                                                <span class="sticker">New</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-5 col-md-7">
-                                            <div class="product_desc">
-                                                <div class="product_desc_info">
-                                                    <div class="product-review">
-                                                        <h5 class="manufacturer">
-                                                            <a href="product-details.html">Graphic Corner</a>
-                                                        </h5>
-                                                        <div class="rating-box">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <h4><a class="product_name"
-                                                            href="{{route('client.detail')}}">Hummingbird printed
-                                                            t-shirt</a></h4>
-                                                    <div class="price-box">
-                                                        <span class="new-price">$46.80</span>
-                                                    </div>
-                                                    <p>Beach Camera Exclusive Bundle - Includes Two Samsung Radiant 360
-                                                        R3 Wi-Fi Bluetooth Speakers. Fill The Entire Room With Exquisite
-                                                        Sound via Ring Radiator Technology. Stream And Control R3
-                                                        Speakers Wirelessly With Your Smartphone. Sophisticated, Modern
-                                                        Desig</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="shop-add-action mb-xs-30">
-                                                <ul class="add-actions-link">
-                                                    <li class="add-cart"><a href="#">Add to cart</a></li>
-                                                    <li class="wishlist"><a href="wishlist.html"><i
-                                                                class="fa fa-heart"></i>Add to wishlist</a></li>
-                                                    <li><a class="quick-view" data-toggle="modal"
-                                                            data-target="#exampleModalCenter" href="#"><i
-                                                                class="fa fa-eye"></i>Quick view</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row product-layout-list last-child">
-                                        <div class="col-lg-3 col-md-5 ">
-                                            <div class="product-image">
-                                                <a href="{{route('client.detail')}}">
-                                                    <img src="{{asset('assets/client/images/product/large-size/1.jpg')}}"
-                                                        alt="Li's Product Image">
-                                                </a>
-                                                <span class="sticker">New</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-5 col-md-7">
-                                            <div class="product_desc">
-                                                <div class="product_desc_info">
-                                                    <div class="product-review">
-                                                        <h5 class="manufacturer">
-                                                            <a href="product-details.html">Graphic Corner</a>
-                                                        </h5>
-                                                        <div class="rating-box">
-                                                            <ul class="rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <h4><a class="product_name"
-                                                            href="{{route('client.detail')}}">Hummingbird printed
-                                                            t-shirt</a></h4>
-                                                    <div class="price-box">
-                                                        <span class="new-price">$46.80</span>
-                                                    </div>
-                                                    <p>Beach Camera Exclusive Bundle - Includes Two Samsung Radiant 360
-                                                        R3 Wi-Fi Bluetooth Speakers. Fill The Entire Room With Exquisite
-                                                        Sound via Ring Radiator Technology. Stream And Control R3
-                                                        Speakers Wirelessly With Your Smartphone. Sophisticated, Modern
-                                                        Desig</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="shop-add-action">
-                                                <ul class="add-actions-link">
-                                                    <li class="add-cart"><a href="#">Add to cart</a></li>
-                                                    <li class="wishlist"><a href="wishlist.html"><i
-                                                                class="fa fa-heart"></i>Add to wishlist</a></li>
-                                                    <li><a class="quick-view" data-toggle="modal"
-                                                            data-target="#exampleModalCenter" href="#"><i
-                                                                class="fa fa-eye"></i>Quick view</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                    <div class="add-actions action__overplay">
+                                        <ul class="add-actions-link">
+                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
+                                                        class="fa fa-heart"></i></a>
+                                            </li>
+                                            <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
+                                                    data-toggle="modal" data-target="#exampleModalCenter"><i
+                                                        class="fa fa-eye"></i></a></li>
+
+                                            <li class="add-cart active "><a href="#"><i
+                                                        class="fa fa-cart-arrow-down fa-7x" aria-hidden="true"></i></a>
+                                            </li>
+                                        </ul>
+
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            <!-- single-product-wrap end -->
 
+                        </div>
+                        @endforeach
                     </div>
                 </div>
-
             </div>
-            <!-- Tab Menu Area End Here -->
+            <!-- Li's Section Area End Here -->
 
         </div>
     </div>
 </section>
-<div class="text-center pb-10">
-    <button class="btn btn-primary">see more</button>
-</div>
-<!-- Li's Trending Product Area End Here -->
-<!-- Begin Quick View | Modal Area -->
+<!--  -->
+<section class="product-area li-laptop-product  pb-45">
+    <div class="container">
+        <div class="row">
+
+            <!-- Begin Li's Section Area -->
+            <div class="col-lg-12">
+                <div class="li-section-title">
+                    <h2>
+                        <span>Laptop</span>
+                    </h2>
+                    <ul class="li-sub-category-list">
+                        <li class="active"><a href="shop-left-sidebar.html">Prime Video</a></li>
+                        <li><a href="shop-left-sidebar.html">Computers</a></li>
+                        <li><a href="shop-left-sidebar.html">Electronics</a></li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="product-active owl-carousel">
+                    @foreach($laptopProduct as $laptopPro)
+                        <div class="col-lg-12 col-md-4 col-sm-6">
+                            <!-- single-product-wrap start -->
+                            <div class="single-product-wrap">
+                                <div class="product-image">
+                                    <a href="{{route('client.detail',['id'=>$laptopPro->id])}}">
+
+                                        <img src="upload/product/{{$laptopPro->url}}" alt="Li's Product Image">
+                                    </a>
+                                    <span class="sticker">New</span>
+                                </div>
+                                <div class="product_desc">
+                                    <div class="product_desc_info">
+                                        <div class="product-review">
+                                            <h5 class="manufacturer">
+                                                <a href="{{route('client.detail')}}">Graphic Corner</a>
+                                            </h5>
+                                            <div class="rating-box">
+                                                <ul class="rating">
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li class="no-star"><i class="fa fa-star"></i></li>
+                                                    <li class="no-star"><i class="fa fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <h4><a class="product_name"
+                                                href="{{route('client.detail')}}">{{$laptopPro->name}}</a>
+                                        </h4>
+                                        <div class="price-box">
+                                            <span
+                                                class="new-price">{{$laptopPro->price}}/{{$laptopPro->unit}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="add-actions action__overplay">
+                                        <ul class="add-actions-link">
+                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
+                                                        class="fa fa-heart"></i></a>
+                                            </li>
+                                            <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
+                                                    data-toggle="modal" data-target="#exampleModalCenter"><i
+                                                        class="fa fa-eye"></i></a></li>
+
+                                            <li class="add-cart active "><a href="#"><i
+                                                        class="fa fa-cart-arrow-down fa-7x" aria-hidden="true"></i></a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single-product-wrap end -->
+
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+            <!-- Li's Section Area End Here -->
+
+        </div>
+    </div>
+</section>
+<!--  -->
+<section class="product-area li-laptop-product  pb-45">
+    <div class="container">
+        <div class="row">
+
+            <!-- Begin Li's Section Area -->
+            <div class="col-lg-12">
+                <div class="li-section-title">
+                    <h2>
+                        <span>Đồng hồ</span>
+                    </h2>
+                    <ul class="li-sub-category-list">
+                        <li class="active"><a href="shop-left-sidebar.html">Prime Video</a></li>
+                        <li><a href="shop-left-sidebar.html">Computers</a></li>
+                        <li><a href="shop-left-sidebar.html">Electronics</a></li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="product-active owl-carousel">
+                    @foreach($oClockProduct as $oclockPro)
+                        <div class="col-lg-12 col-md-4 col-sm-6">
+                            <!-- single-product-wrap start -->
+                            <div class="single-product-wrap">
+                                <div class="product-image">
+                                    <a href="{{route('client.detail',['id'=>$oclockPro->id])}}">
+
+                                        <img src="upload/product/{{$oclockPro->url}}" alt="Li's Product Image">
+                                    </a>
+                                    <span class="sticker">New</span>
+                                </div>
+                                <div class="product_desc">
+                                    <div class="product_desc_info">
+                                        <div class="product-review">
+                                            <h5 class="manufacturer">
+                                                <a href="{{route('client.detail')}}">Graphic Corner</a>
+                                            </h5>
+                                            <div class="rating-box">
+                                                <ul class="rating">
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li class="no-star"><i class="fa fa-star"></i></li>
+                                                    <li class="no-star"><i class="fa fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <h4><a class="product_name"
+                                                href="{{route('client.detail')}}">{{$oclockPro->name}}</a>
+                                        </h4>
+                                        <div class="price-box">
+                                            <span
+                                                class="new-price">{{$oclockPro->price}}/{{$oclockPro->unit}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="add-actions action__overplay">
+                                        <ul class="add-actions-link">
+                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
+                                                        class="fa fa-heart"></i></a>
+                                            </li>
+                                            <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
+                                                    data-toggle="modal" data-target="#exampleModalCenter"><i
+                                                        class="fa fa-eye"></i></a></li>
+
+                                            <li class="add-cart active "><a href="#"><i
+                                                        class="fa fa-cart-arrow-down fa-7x" aria-hidden="true"></i></a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single-product-wrap end -->
+
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+            <!-- Li's Section Area End Here -->
+
+        </div>
+    </div>
+</section>
+
 @include('client.layouts.modal_show')
-
-
 <!-- Quick View | Modal Area End Here -->
-
-
-
-
-
-
 @endsection
-
-
-

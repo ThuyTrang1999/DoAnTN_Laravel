@@ -14,7 +14,6 @@ thêm mới user
                 <form action="{{route('user.xu-ly-cap-nhat',['id'=>$addUser->id])}}" method="POST">
                     @else
                     <form action="{{route('user.xu-ly-them-moi')}}" method="POST">
-
             </div>
             @endif
             @csrf
@@ -63,9 +62,9 @@ thêm mới user
                         </div>
                         <div class="form-group row col-md-6 col-sm-6 ">
                             <label class="control-label col-md-2 col-sm-2 ">Images</label>
-                            <div class="col-md-10 col-sm-10 ">
-                                <input type="file">
-                            </div>
+                            <input type="file" name="avatarFile" id="avatarFile" >
+                                <img @if(isset($addUser))
+                                    src="../../upload/avatar/{{$addUser->avatar}}" @endif alt="img_avatar" id="img_avatar" style="height: 30px; width: 70px;">
                         </div>
                     </div>
 

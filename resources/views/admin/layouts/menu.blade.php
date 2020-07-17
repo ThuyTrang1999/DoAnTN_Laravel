@@ -40,7 +40,6 @@
                   <ul class="nav child_menu">
                   <li><a href="{{route('category.them-moi')}}" style="display: none;">Thêm loại sản phẩm</a></li>
                     <li><a href="{{route('category.listCategory')}}">Danh sách loại sản phẩm</a></li>
-                    
                   </ul>
                 </li>
                 

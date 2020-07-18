@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use App\user;
-
+use App\User;
+use \Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     /**
@@ -14,7 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $listUsers = user::all();
+        $listUsers = User::all();
         //$listLinhVuc = LinhVuc::all();
         return view('admin.pages.user.list-user', compact('listUsers'));
 
@@ -38,7 +40,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-         $addUser = new user;
+         $addUser = new User;
          $addUser->user_name = $request->user_name;
          $addUser->password = $request->password;
          $addUser->first_name = $request->first_name;
@@ -84,7 +86,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-         $addUser = user::find($id);
+         $addUser = User::find($id);
          return view('admin.pages.user.add-user', compact('addUser'));
     }
 
@@ -97,7 +99,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-         $addUser = user::find($id);
+         $addUser = User::find($id);
          $addUser->user_name = $request->user_name;
          $addUser->password = $request->password;
          $addUser->first_name = $request->first_name;
@@ -131,8 +133,52 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-         $addUser = user::find($id);
+         $addUser = User::find($id);
          $addUser->delete();
          return redirect()->route('user.listUser');
+    }
+
+    public function dangNhap(){
+        
+        return view('client.pages.login');
+    }
+    public function xuLyDangNhap(Request $request){
+        
+        $user_name = $request->user_name;
+        $password = $request->mat_khau;
+
+        // $this->validate($request, [ 
+        //     'user_name' => 'required|max:255|min:5',
+        //     'mat_khau' => 'required|max:20|min:4',
+            
+        // ], [
+        //     'user_name.required' => 'Bạn chưa nhập tên đăng nhập',          
+        //     'mat_khau.required' => 'Bạn chưa nhập mật khẩu.',
+        //     'mat_khau.min' => 'Mật khẩu phải lớn hơn 4 kí tự.',
+        //     'mat_khau.max' => 'Mật khẩu phải nhỏ hơn 20 kí tự.',
+            
+        // ]);
+
+           
+        if (Auth::attempt(['user_name'=>$user_name , 'password'=>$password])) {
+            return redirect()->route('admin.index'); 
+            // return "Thành công";
+            }else{
+                return view('client.pages.login');
+            }
+         
+            
+            // else {
+            // // return redirect('dang-nhap')->with('thongbao', 'Sai tên đăng nhập hoặc mật khẩu');
+            // return "Thất bại";
+            // return $mat_khau;
+    }
+    public function layThongTin(){
+        return Auth::id();
+    }
+    public function dangXuat(){
+        Auth::logout();
+        return redirect()->route('dang-nhap');
+        // return view('client.pages.login');  
     }
 }

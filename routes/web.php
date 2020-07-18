@@ -11,12 +11,11 @@
 |
 */
 // LOGIN
-// Route::get('/login','PagesController@loginAdmin')->name('client.login');
-// Route::post('/login','PagesController@xuLyDangNhap')->name('xu-ly-dang-nhap');
-Route::get('login', 'PagesController@dangNhap')->name('dang-nhap');
-Route::post('login', 'PagesController@xuLyDangNhap')->name('xu-ly-dang-nhap');
+Route::get('test', 'UserController@layThongTin');
 
-
+Route::get('login', 'UserController@dangNhap')->name('dang-nhap');
+Route::post('login', 'UserController@xuLyDangNhap')->name('xu-ly-dang-nhap');
+Route::get('dang-xuat', 'UserController@dangXuat')->name('dang-xuat');
 // CLIENT
 Route::get('/', 'PagesController@index')->name('client.index');
 
@@ -50,7 +49,7 @@ Route::prefix('admin')->group(function(){
 // user
 Route::prefix('user')->group(function(){
     Route::name('user.')->group(function(){
-        Route::get('/','UserController@index')->name('listUser');
+        Route::get('/','UserController@index')->name('listUser')->middleware('auth');
         Route::get('add-User','UserController@create')->name('them-moi');
         Route::post('add-User/create','UserController@store')->name('xu-ly-them-moi');
         Route::get('cap-nhap/{id}','UserController@edit')->name('cap-nhat');

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -36,4 +36,19 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+    // public function redirectToProvider(){
+    //     return Socialite::driver('facebook')->redirect();
+    // }
+
+    // public function handleProviderCallback(){
+    //     $userSocial= Socialite::driver('facebook')->user();
+    //     // return $userSocial->name;
+    //     $user = new User;
+    //     $user->name = $userSocial->name;
+    //     $user->email = $userSocial->email;
+    //     $user->save();
+    //     Auth::login($userSocial->email);
+    //     return 'done';
+
+    // }
 }

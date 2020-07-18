@@ -63,18 +63,21 @@
                     </div>
                     <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6 ">
                         <!-- Login Form s-->
-                        <form action="#">
+                        <form action="{{ route('xu-ly-dang-nhap')}}" method="POST">
+                        @csrf
                             <div class="login-form">
                                 <h4 class="login-title">Login</h4>
                                 <div class="row">
                                     <div class="col-md-12 col-12 mb-20">
-                                        <label><i class="fa fa-user fa-2x"></i> Tên đăng nhập</label>
-                                        <input class="mb-0 form-control" type="text" placeholder="Username" name="user_name">
+                                        <label for="user_name"><i class="fa fa-user fa-2x"></i> Tên đăng nhập</label>
+                                        <input class="mb-0 form-control" id="user_name" required="" type="text" placeholder="Username" name="user_name">
                                     </div>
+                                    <!-- <p class="help is-danger">{{ $errors->first('user_name') }}</p> -->
                                     <div class="col-12 mb-20">
-                                        <label><i class="fa fa-lock fa-2x"></i> Mật khẩu</label>
-                                        <input class="mb-0 form-control" type="password" placeholder="Password" name="password">
+                                        <label for="mat_khau"><i class="fa fa-lock fa-2x"></i> Mật khẩu</label>
+                                        <input class="mb-0 form-control" id="mat_khau" required="" type="password" placeholder="Password" name="mat_khau">
                                     </div>
+                                    <!-- <p class="help is-danger">{{ $errors->first('mat_khau') }}</p> -->
                                     <div class="col-md-8">
                                   
                                     </div>

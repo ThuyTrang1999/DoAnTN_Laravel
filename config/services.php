@@ -33,5 +33,10 @@ return [
     'sparkpost' => [
         'secret' => env('SPARKPOST_SECRET'),
     ],
+    // 'facebook'=> [
+    //     'client_id'=>'731097570999266',
+    //     'client-secret'=>'f71c260ff97bb2749da488cfc86f07cd',
+    //     'redirect'=>'http://your-callback-url'
+    // ],  
 
 ];

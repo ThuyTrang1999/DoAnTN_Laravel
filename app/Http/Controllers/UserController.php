@@ -7,6 +7,7 @@ use App\User;
 use \Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 class UserController extends Controller
 {
     /**
@@ -16,10 +17,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $listUsers = User::all();
-        //$listLinhVuc = LinhVuc::all();
-        return view('admin.pages.user.list-user', compact('listUsers'));
-
+        $listUsers = User::paginate(3);
+        return view('admin.pages.user.list-user',['listUsers'=>$listUsers]);
     }
 
     /**
@@ -40,12 +39,37 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'user_name'=>'bail|required|unique:users|min:3|max:50',
+            'password' => 'bail|required|min:6',
+            'repassword' =>'bail|required|same:password',
+            'email' => 'required|email|unique:users,email',
+            'phone' => 'bail|required',
+            'first_name' => 'bail|required',
+            'last_name' => 'bail|required',
+            'address' => 'bail|required',
+        ], [
+            'user_name.required' => 'Tài khoản không được để trống.',
+            'user_name.unique' => 'Tài khoản đã có trong danh sách.',
+            'user_name.max'=>':attribute Không được quá :max ký tự',
+            'password.required' => 'Mật khẩu không được để trống.',
+            'password.min' => 'Mật khẩu tối thiểu là 6 ký tự.',
+            'repassword.required' => 'Mật khẩu không được để trống.',
+            'repassword.same' => 'Mật khẩu không trùng.',
+            'email.required' => 'Email không được để trống.',
+            'email.unique' => 'Email đã tồn tại.',
+            'email.email' => 'Email chưa đúng định dạng.',
+            'phone.required' => 'Số điện thoại không được để trống.',
+            'first_name.required' => 'Tên không được để trống.',
+            'last_name.required' => 'Họ không được để trống.',
+            'address.required' => 'Họ không được để trống.',
+            
+        ]);
          $addUser = new User;
          $addUser->user_name = $request->user_name;
-         $addUser->password = $request->password;
+         $addUser->password = md5($request->password);
          $addUser->first_name = $request->first_name;
          $addUser->last_name = $request->last_name;
-         $get_img_avt = $request->file('avatarFile');
          $addUser->email = $request->email;
          $addUser->phone = $request->phone;
          $addUser->address = $request->address;
@@ -54,17 +78,31 @@ class UserController extends Controller
          $addUser->birthday = $request->birthday;
          $addUser->role = $request->role;
          $addUser->status = $request->status;
-         if($get_img_avt){
-            $new_img_avt = time() . "_" . rand(0,9999999) . "_" . md5(rand(0,9999999)) . "." .$request->avatarFile->getClientOriginalName();
-            $get_img_avt->move('upload/avatar',$new_img_avt);
-            $addUser->avatar = $new_img_avt;
-            $addUser->save();
+         if($request->hasFile('Hinh'))
+         {
+            $file = $request->file('Hinh');
+            $duoi = $file->getClientOriginalExtension();
+            if($duoi != 'jpg' && $duoi != 'png'&& $duoi != 'jpeg')
+            {
+                return redirect()->route('user.listUser')->with('Loi', 'Bạn chỉ được chọn file có đuôi jpg,png,jpeg ');
+            }
+            $name = $file->getClientOriginalName();
+            $Hinh = Str::random(4)."_".$name;
+           
+            echo $Hinh;
+            while(file_exists("upload/avatar/".$Hinh))
+            {
+                $Hinh = Str::random(4)."_".$name;
+            }
+            $file->move("upload/avatar",$Hinh);
+            $addUser->avatar = $Hinh;
         }
-        
-         
-
+        else
+        {
+            $addUser->avatar = "";
+        }
          $addUser->save();
-         return redirect()->route('user.listUser')->with(['flash_message' => 'Thêm User thành công ']);
+         return redirect()->route('user.listUser')->with('thongbao','Thêm thành công ');
     }
 
     /**
@@ -101,28 +139,42 @@ class UserController extends Controller
     {
          $addUser = User::find($id);
          $addUser->user_name = $request->user_name;
-         $addUser->password = $request->password;
+         $addUser->password = md5($request->password);
          $addUser->first_name = $request->first_name;
          $addUser->last_name = $request->last_name;
-         $set_img_avt=$request->file('avatarFile');
-         if(set_img_avt){
-            $new_img_avt=time() . "_" . rand(0,9999999) . "_" . md5(rand(0,9999999)) . "." .$request->avatarFile->getClientOriginalName();
-            $set_img_avt->move('upload/avatar', $new_img_avt);
-            $addUser->avatar = $new_img_avt;
-            $addUser->save();
-        }
          $addUser->email = $request->email;
          $addUser->phone = $request->phone;
          $addUser->address = $request->address;
-         $addUser->num_order = "0";
+         $addUser->num_order = "1";
          $addUser->gender = $request->gender;
          $addUser->birthday = $request->birthday;
          $addUser->role = $request->role;
          $addUser->status = $request->status;
-         
-
+         if($request->hasFile('Hinh'))
+         {
+            $file = $request->file('Hinh');
+            $duoi = $file->getClientOriginalExtension();
+            if($duoi != 'jpg' && $duoi != 'png'&& $duoi != 'jpeg')
+            {
+                return redirect()->route('user.listUser')->with('Lỗi', 'Bạn chỉ được chọn file có đuôi jpg,png,jpeg ');
+            }
+            $name = $file->getClientOriginalName();
+            $Hinh = Str::random(4)."_".$name;
+           
+            echo $Hinh;
+            while(file_exists("upload/avatar/".$Hinh))
+            {
+                $Hinh = Str::random(4)."_".$name;
+            }
+            $file->move("upload/avatar",$Hinh);
+            $addUser->avatar = $Hinh;
+        }
+        else
+        {
+            $addUser->avatar = "";
+        }
          $addUser->save();
-         return redirect()->route('user.listUser')->with(['flash_message' => 'Cập nhật User thành công ']);
+         return redirect()->route('user.listUser')->with(['Thông báo' => 'Cập nhật thành công ']);
     }
 
     /**

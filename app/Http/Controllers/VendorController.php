@@ -14,10 +14,10 @@ class VendorController extends Controller
      */
     public function index()
     {
-        // $listVendors = vendor::all();
-        $listVendors = DB::table('vendors')->join('users', 'vendors.user_id', '=', 'users.id')->get();
-        // echo $listVendors ;
-        return view('admin.pages.shop.list-shop', compact('listVendors'));
+        $listVendors = DB::table('vendors')->join('users', 'vendors.user_id', '=', 'users.id')->get(); 
+       // return view('admin.pages.shop.list-shop', compact('listVendors'));
+        $listVendors = User::paginate(3);
+        return view('admin.pages.shop.list-shop',['listVendors'=>$listVendors]);
 
     }
     public function create()

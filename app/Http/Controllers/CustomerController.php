@@ -13,10 +13,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $listCustomer = customer::all();
-        // echo $listCustomer;
-        return view('admin.pages.customer.list-customer', compact('listCustomer'));
-
+        $listCustomer = customer::paginate(3);
+        return view('admin.pages.customer.list-customer',['listCustomer'=>$listCustomer]);
     }
     public function create()
     {

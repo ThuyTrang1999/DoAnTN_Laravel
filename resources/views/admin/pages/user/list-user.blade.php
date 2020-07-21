@@ -122,7 +122,6 @@ Danh sách user
                                                 </tr>
                                             </thead>
                                             <tbody>
-
                                                 @foreach ($listUsers as $ur)
                                                 <tr class="odd cus-{{$ur -> id}}">
                                                     <td>{{$ur -> user_name}}</td>
@@ -138,8 +137,16 @@ Danh sách user
                                                     <td>{{$ur -> num_order}}</td>
                                                     <td>{{$ur -> gender}}</td>
                                                     <td>{{$ur -> birthday}}</td>
-                                                    <td>{{$ur -> role}}</td>
-                                                    <td>{{$ur -> status}}</td>
+                                                    @if($ur->role==1)
+                                                    <td class="text-success">Quản trị viên</td>
+                                                    @else
+                                                    <td class="text-danger">Nhân viên</td>
+                                                    @endif
+                                                    @if($ur->status==0)
+                                                    <td class="text-success">Đang hoạt động</td>
+                                                    @else
+                                                    <td class="text-danger">Không hoạt động</td>
+                                                    @endif
                                                     <td>{{$ur -> created_at}}</td>
                                                     <td>{{$ur -> updated_at}}</td>
                                                     <td class="text-center">
@@ -150,6 +157,8 @@ Danh sách user
                                                 @endforeach
                                             </tbody>
                                         </table>
+                                        {!! $listUsers->links() !!}
+                                      
                                     </div>
                                 </div>
 
@@ -163,29 +172,5 @@ Danh sách user
         </div>
     </div>
 </div>
-<div class="row">
-    
-    <div class="col-sm-12">
-        <div class="dataTables_paginate paging_simple_numbers" id="datatable-responsive_paginate">
-            <ul class="pagination">
-                <li class="paginate_button previous disabled" id="datatable-responsive_previous"><a href="#"
-                        aria-controls="datatable-responsive" data-dt-idx="0" tabindex="0">Previous</a></li>
-                <li class="paginate_button active"><a href="#" aria-controls="datatable-responsive" data-dt-idx="1"
-                        tabindex="0">1</a></li>
-                <li class="paginate_button "><a href="#" aria-controls="datatable-responsive" data-dt-idx="2"
-                        tabindex="0">2</a></li>
-                <li class="paginate_button "><a href="#" aria-controls="datatable-responsive" data-dt-idx="3"
-                        tabindex="0">3</a></li>
-                <li class="paginate_button "><a href="#" aria-controls="datatable-responsive" data-dt-idx="4"
-                        tabindex="0">4</a></li>
-                <li class="paginate_button "><a href="#" aria-controls="datatable-responsive" data-dt-idx="5"
-                        tabindex="0">5</a></li>
-                <li class="paginate_button "><a href="#" aria-controls="datatable-responsive" data-dt-idx="6"
-                        tabindex="0">6</a></li>
-                <li class="paginate_button next" id="datatable-responsive_next"><a href="#"
-                        aria-controls="datatable-responsive" data-dt-idx="7" tabindex="0">Next</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
+
 @endsection

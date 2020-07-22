@@ -18,15 +18,30 @@ class ProduceController extends Controller
      */
     public function index()
     {
-        $listProduce = DB::table('produces')->join('imgs', 'produces.id', '=', 'imgs.produce_id')->get();
+        $listProduce = DB::table('produces')
+        ->join('imgs', 'produces.id', '=', 'imgs.produce_id')
+        ->get();
         
         return view('admin.pages.product.list-product', compact('listProduce'));
     }
-    public function select()
+    public function select(Request $request)
     {
-        $listProduces = DB::table('produces')->join('imgs', 'produces.id', '=', 'imgs.produce_id')->get();
+        $listCate = DB::table('categories')->get();
+        $listShop=DB::table('vendors')->get();
+
+       if($request->key_word){
+            $result=DB::table('produces')
+            ->join('imgs', 'produces.id', '=', 'imgs.produce_id')
+            ->where('produces.name', 'like', '%' .$request->key_word. '%');
+       }
+       else{
+            $result = DB::table('produces')
+            ->join('imgs', 'produces.id', '=', 'imgs.produce_id');
+        }
+        $listProduces=$result->orderBy('produces.id')->paginate(12);
+        
         // echo $listProduces;
-        return view('client.pages.list-product', compact('listProduces'));
+        return view('client.pages.list-product', compact('listProduces','listCate', 'listShop'));
     }
 
     /**
@@ -160,10 +175,14 @@ class ProduceController extends Controller
     // show detail
     public function detail(Request $req){
         
-        $singleProduct=DB::table('produces')->join('imgs', 'produces.id', '=', 'imgs.produce_id')->where('produces.id', $req->id)->first();
+        $singleProduct=DB::table('produces')
+        ->join('imgs', 'produces.id', '=', 'imgs.produce_id')
+        ->where('produces.id', $req->id)->first();
 
-        $related_product=DB::table('produces')->join('imgs', 'produces.id', '=', 'imgs.produce_id')
-        ->where('produces.category_id', $singleProduct->category_id)->whereNotIn('produces.id', [$req->id])->get();
+        $related_product=DB::table('produces')
+        ->join('imgs', 'produces.id', '=', 'imgs.produce_id')
+        ->where('produces.category_id', $singleProduct->category_id)
+        ->whereNotIn('produces.id', [$req->id])->get();
        
         // dd($singleProduct);
         // dd($related_product);
@@ -171,4 +190,7 @@ class ProduceController extends Controller
 
         return view('client.pages.detail', compact('singleProduct', 'related_product'));
     }
+
+    
+
 }

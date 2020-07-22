@@ -57,6 +57,13 @@
                     
                   </ul>
                 </li>
+                <li><a><i class="fa fa-newspaper-o" aria-hidden="true"></i>Quản lý hóa đơn<span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                  <li><a href="#" >In hóa đơn</a></li>
+                    <li><a href="#">Xứ lý hóa đơn</a></li>
+                    
+                  </ul>
+                </li>
                 <li><a href="{{route('admin.setting')}}"><i class="fa fa-cogs" aria-hidden="true"></i>cài đặt</a>
                   
                 </li>

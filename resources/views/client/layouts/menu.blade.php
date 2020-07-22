@@ -69,7 +69,7 @@
 
                                 </ul>
                             </li>
-                            <li class="megamenu-static-holder"><a href="index.html">Trang</a>
+                            <li class="megamenu-static-holder"><a href="#">Trang</a>
                                 <ul class="megamenu hb-megamenu">
                                     <li><a href="blog-left-sidebar.html">Blog Layouts</a>
                                         <ul>

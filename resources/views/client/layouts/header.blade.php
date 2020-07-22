@@ -83,8 +83,8 @@
                       <!-- Begin Header Middle Right Area -->
                       <div class="col-lg-9 pl-0 ml-sm-15 ml-xs-15">
                           <!-- Begin Header Middle Searchbox Area -->
-                          <form action="#" class="hm-searchbox">
-                              <input type="text" placeholder="Nhập khóa tìm kiếm của bạn ...">
+                          <form action="{{route('searchResult')}}" class="hm-searchbox">
+                              <input type="text" name="key" placeholder="Nhập khóa tìm kiếm của bạn ...">
                               <button class="li-btn" type="submit"><i class="fa fa-search"></i></button>
                           </form>
                           <!-- Header Middle Searchbox Area End Here -->
@@ -100,21 +100,10 @@
                                           </span>
                                       </div>
                                       <span></span>
+                                     
                                       <div class="minicart">
                                           <ul class="minicart-product-list">
-                                              <li>
-                                                  <a href="single-product.html" class="minicart-product-image">
-                                                      <img src="{{asset('assets/client/images/product/small-size/5.jpg')}}"
-                                                          alt="cart products">
-                                                  </a>
-                                                  <div class="minicart-product-details">
-                                                      <h6><a href="single-product.html">Aenean eu tristique</a></h6>
-                                                      <span>£40 x 1</span>
-                                                  </div>
-                                                  <button class="close" title="Remove">
-                                                      <i class="fa fa-close"></i>
-                                                  </button>
-                                              </li>
+                                              
                                               <li>
                                                   <a href="single-product.html" class="minicart-product-image">
                                                       <img src="{{asset('assets/client/images/product/small-size/6.jpg')}}"
@@ -131,13 +120,14 @@
                                           </ul>
                                           <p class="minicart-total">Tổng tiền: <span>80.00</span></p>
                                           <div class="minicart-button">
-                                              <a href="{{route('client.cart')}}"
+                                              <a href="#"
                                                   class="li-button li-button-fullwidth li-button-dark">
                                                   <span>View Full Cart</span>
                                               </a>
 
                                           </div>
                                       </div>
+                                    
                                   </li>
                                   <!-- Header Mini Cart Area End Here -->
                               </ul>
@@ -149,9 +139,7 @@
               </div>
           </div>
           <!-- Header Middle Area End Here -->
-          <!-- Begin Header Bottom Area -->
 
-          <!-- Header Bottom Area End Here -->
           <!-- Begin Mobile Menu Area -->
           <div class="mobile-menu-area d-lg-none d-xl-none col-12">
               <div class="container">

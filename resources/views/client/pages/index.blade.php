@@ -1,7 +1,7 @@
 @extends('client.layouts.master')
 
 @section('title')
-Home
+    Trang chủ
 @endsection
 
 
@@ -15,8 +15,8 @@ Home
         <div class="row">
             <div class="col-lg-12">
                 <div class="li-product-tab">
-                    <ul class="nav li-product-menu">
-                        <li><a class="active" data-toggle="tab" href="#"><span>Ưu đãi hấp dẫn</span></a></li>
+                    <ul class="nav li-product-menu text-center">
+                        <li><a class="active " data-toggle="tab" href="#"><span>Ưu đãi hấp dẫn</span></a></li>
 
                         </li>
                     </ul>
@@ -32,8 +32,8 @@ Home
                         <div class="col-lg-12 col-md-4 col-sm-6">
                             <!-- single-product-wrap start -->
                             <div class="single-product-wrap">
-                                <div class="product-image p-5">
-                                    <a href="{{route('client.detail',['id'=>$pKM->id])}}">
+                                <div class="product-image">
+                                    <a href="{{route('client.detail', ['id' => $pKM->id])}}">
 
                                         <img src="upload/product/{{$pKM->url}}" alt="Li's Product Image">
                                     </a>
@@ -43,7 +43,7 @@ Home
                                     <div class="product_desc_info">
                                         <div class="product-review">
                                             <h5 class="manufacturer">
-                                                <a href="{{route('client.detail')}}">Graphic Corner</a>
+                                                <a href="{{route('client.detail')}}">Tên shop</a>
                                             </h5>
                                             <div class="rating-box">
                                                 <ul class="rating">
@@ -55,10 +55,12 @@ Home
                                                 </ul>
                                             </div>
                                         </div>
-                                        <h4><a class="product_name" href="{{route('client.detail')}}">{{$pKM->name}}</a>
+                                        <h4><a class="product_name" href="{{route('client.detail', ['id' => $pKM->id])}}">{{$pKM->name}}</a>
                                         </h4>
                                         <div class="price-box">
-                                            <span class="new-price">{{$pKM->price}}/{{$pKM->unit}}</span>
+                                            <span class="new-price">{{$pKM->discout_price}}/{{$pKM->unit}}</span>
+                                            <span class="old-price">{{$pKM->price}}/{{$pKM->unit}}</span>
+                                            <!-- <span class="discount-percentage">-7%</span> -->
                                         </div>
                                     </div>
                                     <div class="add-actions action__overplay">
@@ -66,7 +68,6 @@ Home
                                             <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
                                                         class="fa fa-heart"></i></a>
                                             </li>
-                                            
                                             <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
                                                     data-toggle="modal" data-target="#exampleModalCenter"><i
                                                         class="fa fa-eye"></i></a></li>
@@ -92,13 +93,13 @@ Home
 </div>
 <!-- Product Area End Here -->
 <!-- Most purchased products Area -->
-<div class="purchased product-area pt-60 pb-50">
+<div class="purchased product-area  pb-50">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="li-product-tab">
-                    <ul class="nav li-product-menu">
-                        <li><a class="active" data-toggle="tab" href="#"><span>Sản phẩm mua nhiều nhất</span></a></li>
+                    <ul class="nav li-product-menu text-center">
+                        <li><a class="active " data-toggle="tab" href="#"><span class="text-center">Sản phẩm mua nhiều nhất</span></a></li>
 
                         </li>
                     </ul>
@@ -109,14 +110,14 @@ Home
         <div class="tab-content">
             <div id="li-new-product" class="tab-pane active show" role="tabpanel">
                 <div class="row">
-                    <div class="product-active owl-carousel ">
-                        @foreach($prouctTop as $pTop)
+                    <div class="product-active owl-carousel">
+                        @foreach($Hot_KM as $pMost)
                         <div class="col-lg-12 ">
                             <!-- single-product-wrap start -->
                             <div class="single-product-wrap wow fadeInLeft single_overplay" data-wow-duration="2s">
                                 <div class="product-image">
                                     <a href="{{route('client.detail')}}">
-                                        <img src="upload/{{$pTop->url}}" alt="Li's Product Image">
+                                        <img src="../upload/product/{{$pMost->url}}" alt="Li's Product Image">
                                     </a>
                                     <span class="sticker">New</span>
                                 </div>
@@ -124,7 +125,7 @@ Home
                                     <div class="product_desc_info">
                                         <div class="product-review">
                                             <h5 class="manufacturer">
-                                                <a href="{{route('client.detail')}}">Graphic Corner</a>
+                                                <a href="{{route('client.detail')}}">Tên shop</a>
                                             </h5>
                                             <div class="rating-box">
                                                 <ul class="rating">
@@ -137,9 +138,9 @@ Home
                                             </div>
                                         </div>
                                         <h4><a class="product_name"
-                                                href="{{route('client.detail')}}">{{$pTop->name}}</a></h4>
+                                                href="{{route('client.detail')}}">{{$pMost->name}}</a></h4>
                                         <div class="price-box">
-                                            <span class="new-price">{{$pTop->price}}</span>
+                                            <span class="new-price">{{$pMost->price}}</span>
                                         </div>
                                     </div>
                                     <div class="add-actions action__overplay">
@@ -234,7 +235,7 @@ Home
                                 <div class="featured-pro-wrapper  mb-sm-25">
                                     <div class="product-img">
                                         <a href="{{route('client.detail')}}">
-                                            <img alt="" src="upload/{{$pTop->url}}">
+                                            <img alt="" src="../upload/product/{{$pTop->url}}">
                                         </a>
                                     </div>
                                     <div class="featured-pro-content">
@@ -252,13 +253,12 @@ Home
                                                 <li class="no-star"><i class="fa fa-star"></i></li>
                                             </ul>
                                         </div>
-                                        <h4><a class="featured-product-name" href="{{route('client.detail')}}">Mug Today
-                                                is a
-                                                good day</a></h4>
+                                        <h4><a class="featured-product-name"
+                                                href="{{route('client.detail')}}">Tên shop</a></h4>
                                         <div class="featured-price-box">
-                                            <span class="new-price new-price-2">{{$pTop->discout_price}}</span>
-                                            <span class="old-price">{{$pTop->price}}</span>
-                                            <span class="discount-percentage">-7%</span>
+                                            <span class="new-price ">{{$pTop->discout_price}}</span>
+                                            <!-- <span class="old-price">{{$pTop->price}}</span> -->
+                                            <!-- <span class="discount-percentage">-7%</span> -->
                                         </div>
                                         <div class="featured-product-action action__overplay">
                                             <ul class="add-actions-link">
@@ -282,61 +282,7 @@ Home
                             @endforeach
                         </div>
                     </div>
-                    <div class="row wow bounceInRight" data-wow-duration="4s">
-                        <div class="featured-product-active owl-carousel owl-theme">
-                            @foreach($prouctTop as $pTop)
-                            <div class="item featured-product-item">
-                                <div class="featured-pro-wrapper  mb-sm-25">
-                                    <div class="product-img">
-                                        <a href="{{route('client.detail')}}">
-                                            <img alt="" src="upload/{{$pTop->url}}">
-                                        </a>
-                                    </div>
-                                    <div class="featured-pro-content">
-                                        <div class="product-review">
-                                            <h5 class="manufacturer">
-                                                <a href="{{route('client.detail')}}">{{$pTop->name}}</a>
-                                            </h5>
-                                        </div>
-                                        <div class="rating-box">
-                                            <ul class="rating">
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                            </ul>
-                                        </div>
-                                        <h4><a class="featured-product-name" href="{{route('client.detail')}}l">Mug
-                                                Today is a
-                                                good day</a></h4>
-                                        <div class="featured-price-box">
-                                            <span class="new-price new-price-2">{{$pTop->discout_price}}</span>
-                                            <span class="old-price">{{$pTop->price}}</span>
-                                            <span class="discount-percentage">-7%</span>
-                                        </div>
-                                        <div class="featured-product-action action__overplay">
-                                            <ul class="add-actions-link">
-                                                <li class="add-cart heart"><a class="links-details "
-                                                        href="wishlist.html"><i class="fa fa-heart"></i></a>
-                                                </li>
-                                                <li class="add-cart "><a href="#" title="quick view"
-                                                        class="quick-view-btn" data-toggle="modal"
-                                                        data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a>
-                                                </li>
-
-                                                <li class="add-cart active "><a href="#"><i
-                                                            class="fa fa-cart-arrow-down fa-7x"
-                                                            aria-hidden="true"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
             <!-- Featured Product Area End Here -->
@@ -363,8 +309,8 @@ Home
                             <!-- single-product-wrap start -->
                             <div class="single-product-wrap wow fadeInLeft single_overplay" data-wow-duration="2s">
                                 <div class="product-image">
-                                    <a href="{{route('client.detail')}}">
-                                        <img src="upload/{{ $pTop->url }}" alt="Li's Product Image">
+                                    <a href="{{route('client.detail', ['id' => $pTop->id])}}">
+                                        <img src="../upload/product/{{ $pTop->url }}" alt="Li's Product Image">
                                     </a>
                                     <span class="sticker">New</span>
                                 </div>
@@ -372,7 +318,7 @@ Home
                                     <div class="product_desc_info">
                                         <div class="product-review">
                                             <h5 class="manufacturer">
-                                                <a href="{{route('client.detail')}}">Graphic Corner</a>
+                                                <a href="{{route('client.detail')}}">Tên shop</a>
                                             </h5>
                                             <div class="rating-box">
                                                 <ul class="rating">
@@ -385,7 +331,7 @@ Home
                                             </div>
                                         </div>
                                         <h4><a class="product_name"
-                                                href="{{route('client.detail')}}">{{$pTop->name}}</a></h4>
+                                                href="{{route('client.detail', ['id' => $pTop->id])}}">{{$pTop->name}}</a></h4>
                                         <div class="price-box">
                                             <span class="new-price">{{$pTop->price}}</span>
                                         </div>
@@ -458,9 +404,10 @@ Home
                         <span>Điện thoại</span>
                     </h2>
                     <ul class="li-sub-category-list">
-                        <li class="active"><a href="shop-left-sidebar.html">Prime Video</a></li>
-                        <li><a href="shop-left-sidebar.html">Computers</a></li>
-                        <li><a href="shop-left-sidebar.html">Electronics</a></li>
+                        <li class="active"><a href="shop-left-sidebar.html">Iphone</a></li>
+                        <li><a href="shop-left-sidebar.html">Samsung</a></li>
+                        <li><a href="shop-left-sidebar.html">Oppo</a></li>
+                        <li><a href="shop-left-sidebar.html">Xem tất cả</a></li>
                     </ul>
                 </div>
                 <div class="row">
@@ -470,7 +417,7 @@ Home
                             <!-- single-product-wrap start -->
                             <div class="single-product-wrap">
                                 <div class="product-image">
-                                    <a href="{{route('client.detail',['id'=>$phonePro->id])}}">
+                                    <a href="{{route('client.detail', ['id' => $phonePro->id])}}">
 
                                         <img src="upload/product/{{$phonePro->url}}" alt="Li's Product Image">
                                     </a>
@@ -480,7 +427,7 @@ Home
                                     <div class="product_desc_info">
                                         <div class="product-review">
                                             <h5 class="manufacturer">
-                                                <a href="{{route('client.detail')}}">Graphic Corner</a>
+                                                <a href="{{route('client.detail')}}">Tên shop</a>
                                             </h5>
                                             <div class="rating-box">
                                                 <ul class="rating">
@@ -492,12 +439,10 @@ Home
                                                 </ul>
                                             </div>
                                         </div>
-                                        <h4><a class="product_name"
-                                                href="{{route('client.detail')}}">{{$phonePro->name}}</a>
+                                        <h4><a class="product_name" href="{{route('client.detail', ['id' => $phonePro->id])}}">{{$phonePro->name}}</a>
                                         </h4>
                                         <div class="price-box">
-                                            <span
-                                                class="new-price">{{$phonePro->price}}/{{$phonePro->unit}}</span>
+                                            <span class="new-price">{{$phonePro->price}}/{{$phonePro->unit}}</span>
                                         </div>
                                     </div>
                                     <div class="add-actions action__overplay">
@@ -509,7 +454,8 @@ Home
                                                     data-toggle="modal" data-target="#exampleModalCenter"><i
                                                         class="fa fa-eye"></i></a></li>
 
-                                            <li class="add-cart active "><a href="#"><i
+                                            <li class="add-cart active "><a
+                                                    href="#"><i
                                                         class="fa fa-cart-arrow-down fa-7x" aria-hidden="true"></i></a>
                                             </li>
                                         </ul>
@@ -541,19 +487,20 @@ Home
                         <span>Laptop</span>
                     </h2>
                     <ul class="li-sub-category-list">
-                        <li class="active"><a href="shop-left-sidebar.html">Prime Video</a></li>
-                        <li><a href="shop-left-sidebar.html">Computers</a></li>
-                        <li><a href="shop-left-sidebar.html">Electronics</a></li>
+                        <li class="active"><a href="shop-left-sidebar.html">Dell</a></li>
+                        <li><a href="shop-left-sidebar.html">Macbook</a></li>
+                        <li><a href="shop-left-sidebar.html">Lenovo</a></li>
+                        <li><a href="shop-left-sidebar.html">Xem tất cả</a></li>
                     </ul>
                 </div>
                 <div class="row">
                     <div class="product-active owl-carousel">
-                    @foreach($laptopProduct as $laptopPro)
+                        @foreach($laptopProduct as $laptopPro)
                         <div class="col-lg-12 col-md-4 col-sm-6">
                             <!-- single-product-wrap start -->
                             <div class="single-product-wrap">
                                 <div class="product-image">
-                                    <a href="{{route('client.detail',['id'=>$laptopPro->id])}}">
+                                    <a href="{{route('client.detail', ['id' => $laptopPro->id])}}">
 
                                         <img src="upload/product/{{$laptopPro->url}}" alt="Li's Product Image">
                                     </a>
@@ -563,7 +510,7 @@ Home
                                     <div class="product_desc_info">
                                         <div class="product-review">
                                             <h5 class="manufacturer">
-                                                <a href="{{route('client.detail')}}">Graphic Corner</a>
+                                                <a href="{{route('client.detail')}}">Tên shop</a>
                                             </h5>
                                             <div class="rating-box">
                                                 <ul class="rating">
@@ -576,11 +523,10 @@ Home
                                             </div>
                                         </div>
                                         <h4><a class="product_name"
-                                                href="{{route('client.detail')}}">{{$laptopPro->name}}</a>
+                                                href="{{route('client.detail', ['id' => $laptopPro->id])}}">{{$laptopPro->name}}</a>
                                         </h4>
                                         <div class="price-box">
-                                            <span
-                                                class="new-price">{{$laptopPro->price}}/{{$laptopPro->unit}}</span>
+                                            <span class="new-price">{{$laptopPro->price}}/{{$laptopPro->unit}}</span>
                                         </div>
                                     </div>
                                     <div class="add-actions action__overplay">
@@ -624,19 +570,19 @@ Home
                         <span>Đồng hồ</span>
                     </h2>
                     <ul class="li-sub-category-list">
-                        <li class="active"><a href="shop-left-sidebar.html">Prime Video</a></li>
-                        <li><a href="shop-left-sidebar.html">Computers</a></li>
-                        <li><a href="shop-left-sidebar.html">Electronics</a></li>
+                        <li class="active"><a href="shop-left-sidebar.html">Đồng hồ thông minh</a></li>
+                        <li><a href="shop-left-sidebar.html">Đồng hồ thời trang</a></li>
+                        <li><a href="shop-left-sidebar.html">Xem tất cả</a></li>
                     </ul>
                 </div>
                 <div class="row">
                     <div class="product-active owl-carousel">
-                    @foreach($oClockProduct as $oclockPro)
+                        @foreach($oClockProduct as $oclockPro)
                         <div class="col-lg-12 col-md-4 col-sm-6">
                             <!-- single-product-wrap start -->
                             <div class="single-product-wrap">
                                 <div class="product-image">
-                                    <a href="{{route('client.detail',['id'=>$oclockPro->id])}}">
+                                    <a href="{{route('client.detail', ['id' => $oclockPro->id])}}">
 
                                         <img src="upload/product/{{$oclockPro->url}}" alt="Li's Product Image">
                                     </a>
@@ -646,7 +592,7 @@ Home
                                     <div class="product_desc_info">
                                         <div class="product-review">
                                             <h5 class="manufacturer">
-                                                <a href="{{route('client.detail')}}">Graphic Corner</a>
+                                                <a href="{{route('client.detail')}}">Ten shop</a>
                                             </h5>
                                             <div class="rating-box">
                                                 <ul class="rating">
@@ -659,11 +605,93 @@ Home
                                             </div>
                                         </div>
                                         <h4><a class="product_name"
-                                                href="{{route('client.detail')}}">{{$oclockPro->name}}</a>
+                                                href="{{route('client.detail', ['id' => $oclockPro->id])}}">{{$oclockPro->name}}</a>
                                         </h4>
                                         <div class="price-box">
-                                            <span
-                                                class="new-price">{{$oclockPro->price}}/{{$oclockPro->unit}}</span>
+                                            <span class="new-price">{{$oclockPro->price}}/{{$oclockPro->unit}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="add-actions action__overplay">
+                                        <ul class="add-actions-link">
+                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
+                                                        class="fa fa-heart"></i></a>
+                                            </li>
+                                            <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
+                                                    data-toggle="modal" data-target="#exampleModalCenter"><i
+                                                        class="fa fa-eye"></i></a></li>
+
+                                            <li class="add-cart active "><a href="#"><i
+                                                        class="fa fa-cart-arrow-down fa-7x" aria-hidden="true"></i></a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single-product-wrap end -->
+
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+            <!-- Li's Section Area End Here -->
+
+        </div>
+    </div>
+</section>
+<!--  -->
+<section class="product-area li-laptop-product  pb-45">
+    <div class="container">
+        <div class="row">
+
+            <!-- Begin Li's Section Area -->
+            <div class="col-lg-12">
+                <div class="li-section-title">
+                    <h2>
+                        <span>Phụ kiện</span>
+                    </h2>
+                    <ul class="li-sub-category-list">
+                        <li class="active"><a href="shop-left-sidebar.html">Chuột</a></li>
+                        <li><a href="shop-left-sidebar.html">Usb</a></li>
+                        <li><a href="shop-left-sidebar.html">Usb</a></li>
+                        <li><a href="shop-left-sidebar.html">Xem tất cả</a></li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="product-active owl-carousel">
+                        @foreach($accesProduct as $accesPro)
+                        <div class="col-lg-12 col-md-4 col-sm-6">
+                            <!-- single-product-wrap start -->
+                            <div class="single-product-wrap">
+                                <div class="product-image">
+                                    <a href="{{route('client.detail', ['id' => $accesPro->id])}}">
+
+                                        <img src="upload/product/{{$accesPro->url}}" alt="Li's Product Image">
+                                    </a>
+                                    <span class="sticker">New</span>
+                                </div>
+                                <div class="product_desc">
+                                    <div class="product_desc_info">
+                                        <div class="product-review">
+                                            <h5 class="manufacturer">
+                                                <a href="{{route('client.detail')}}">Ten shop</a>
+                                            </h5>
+                                            <div class="rating-box">
+                                                <ul class="rating">
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li class="no-star"><i class="fa fa-star"></i></li>
+                                                    <li class="no-star"><i class="fa fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <h4><a class="product_name"
+                                                href="{{route('client.detail', ['id' => $accesPro->id])}}">{{$accesPro->name}}</a>
+                                        </h4>
+                                        <div class="price-box">
+                                            <span class="new-price">{{$accesPro->price}}/{{$accesPro->unit}}</span>
                                         </div>
                                     </div>
                                     <div class="add-actions action__overplay">

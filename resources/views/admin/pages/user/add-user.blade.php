@@ -137,8 +137,8 @@ thêm mới user
                             <div class="col-md-10 col-sm-10 ">
                                 <select class="select2_single form-control" name="gender" tabindex="-1"
                                     @if(isset($addUser)) value="{{ $addUser->gender }}" @endif>
-                                    <option value="Male">Nam</option>
-                                    <option value="Female">Nữ</option>
+                                    <option value="Nam">Nam</option>
+                                    <option value="Nữ">Nữ</option>
                                 </select>
                             </div>
                         </div>

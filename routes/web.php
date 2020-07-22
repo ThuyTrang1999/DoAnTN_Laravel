@@ -16,6 +16,7 @@ Route::get('test', 'UserController@layThongTin');
 Route::get('login', 'UserController@dangNhap')->name('dang-nhap');
 Route::post('login', 'UserController@xuLyDangNhap')->name('xu-ly-dang-nhap');
 Route::get('dang-xuat', 'UserController@dangXuat')->name('dang-xuat');
+
 // CLIENT
 Route::get('/', 'PagesController@index')->name('client.index');
 
@@ -163,17 +164,15 @@ Route::prefix('shop')->group(function(){
 
 
 
-Route::get('/client/about', function () {
+Route::get('/about', function () {
     return view('client.pages.about');
 })->name('client.about');
-Route::get('/client/cart', function () {
-    return view('client.pages.cart');
-})->name('client.cart');
-Route::get('/client/contact', function () {
+
+Route::get('/contact', function () {
     return view('client.pages.contact');
 })->name('client.contact');
 
-Route::get('/client/list-product','ProduceController@select')->name('client.list-product');
+Route::get('/danh-sach-san-pham','ProduceController@select')->name('client.list-product');
 
 // 404
 Route::get('/404', function () {
@@ -182,3 +181,12 @@ Route::get('/404', function () {
 
 // Detail
 Route::get('/detail/id','ProduceController@detail' )->name('client.detail');
+
+// cart
+Route::get('/them-san-pham/{id}','PagesController@AddCart' )->name('add_cart');
+
+
+// search
+Route::get('/search','PagesController@getSearch' )->name('search');
+Route::get('/ket-qua-tim-kiem','PagesController@getSearchResult' )->name('searchResult');
+

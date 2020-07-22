@@ -17,47 +17,37 @@ Trang giỏ hàng
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th class="li-product-remove">remove</th>
-                                    <th class="li-product-thumbnail">images</th>
-                                    <th class="cart-product-name">Product</th>
-                                    <th class="li-product-price">Unit Price</th>
-                                    <th class="li-product-quantity">Quantity</th>
-                                    <th class="li-product-subtotal">Total</th>
+                                    <th class="li-product-remove">Xóa</th>
+                                    <th class="li-product-thumbnail">Hình ảnh</th>
+                                    <th class="cart-product-name">Tên sản phẩm</th>
+                                    <th class="li-product-price">Giá</th>
+                                    <th class="li-product-quantity">Số lượng</th>
+                                    <th class="li-product-subtotal">Thành tiền</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td class="li-product-remove"><a href="#"><i class="fa fa-trash text-danger"></i></a></td>
-                                    <td class="li-product-thumbnail"><a href="#"><img
-                                                src="{{asset('assets/client/images/product/small-size/5.jpg')}}" alt="Li's Product Image"></a></td>
-                                    <td class="li-product-name"><a href="#">Accusantium dolorem1</a></td>
-                                    <td class="li-product-price"><span class="amount">$46.80</span></td>
-                                    <td class="quantity">
-                                        <label>Quantity</label>
-                                        <div class="cart-plus-minus">
-                                            <input class="cart-plus-minus-box" value="1" type="text">
-                                            <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
-                                            <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
-                                        </div>
-                                    </td>
-                                    <td class="product-subtotal"><span class="amount">$70.00</span></td>
-                                </tr>
-                                <tr>
-                                    <td class="li-product-remove"><a href="#"><i class="fa fa-trash text-danger"></i></a></td>
-                                    <td class="li-product-thumbnail"><a href="#"><img
-                                                src="{{asset('assets/client/images/product/small-size/6.jpg')}}" alt="Li's Product Image"></a></td>
-                                    <td class="li-product-name"><a href="#">Mug Today is a good day</a></td>
-                                    <td class="li-product-price"><span class="amount">$71.80</span></td>
-                                    <td class="quantity">
-                                        <label>Quantity</label>
-                                        <div class="cart-plus-minus">
-                                            <input class="cart-plus-minus-box" value="1" type="text">
-                                            <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
-                                            <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
-                                        </div>
-                                    </td>
-                                    <td class="product-subtotal"><span class="amount">$60.50</span></td>
-                                </tr>
+                                @if(Session::has("Cart") != null)
+                                    @foreach(Session::get("Cart")->sanpham as $item) 
+                                        <tr id="change-item-cart">
+                                            <td class="li-product-remove"><a href="#"><i
+                                                        class="fa fa-trash text-danger"></i></a></td>
+                                            <td class="li-product-thumbnail"><a><img
+                                                        src="../upload/product/{{$item['ttsanpham']->url}}"
+                                                        alt="Li's Product Image"></a></td>
+                                            <td class="li-product-name"><a >{{$item['ttsanpham']->name}}</a></td>
+                                            <td class="li-product-price"><span class="amount">{{$item['ttsanpham']->price}} vnđ</span></td>
+                                            <td class="quantity">
+                                                <label>Quantity</label>
+                                                <div class="cart-plus-minus">
+                                                    <input class="cart-plus-minus-box" value="{{$item['quanty']}}" type="text">
+                                                    <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
+                                                    <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
+                                                </div>
+                                            </td>
+                                            <td class="product-subtotal"><span class="amount">{{number_format($item['price'])}}</span></td>
+                                        </tr>
+                                    @endforeach
+                                @endif
                             </tbody>
                         </table>
                     </div>
@@ -66,7 +56,7 @@ Trang giỏ hàng
                             <div class="coupon-all">
 
                                 <div class="coupon2">
-                                    <input class="button" name="update_cart" value="Update cart" type="submit">
+                                    <input class="button" name="update_cart" value="Cập nhật giỏ hàng" type="submit">
                                 </div>
                             </div>
                         </div>
@@ -74,12 +64,12 @@ Trang giỏ hàng
                     <div class="row">
                         <div class="col-md-5 ml-auto">
                             <div class="cart-page-total">
-                                <h2>Cart totals</h2>
+                                <h2>Tổng số giỏ hàng</h2>
                                 <ul>
-                                    <li>Subtotal <span>$130.00</span></li>
-                                    <li>Total <span>$130.00</span></li>
+                                    <li>Số lượng sản phẩm<span>10</span></li>
+                                    <li>Tổng tiền <span>$130.00</span></li>
                                 </ul>
-                                <a href="#">Proceed to checkout</a>
+                                <a href="#">Thanh toán</a>
                             </div>
                         </div>
                     </div>

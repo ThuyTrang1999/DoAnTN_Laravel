@@ -26,7 +26,7 @@ Trang chi tiet
                                     style="{{$singleProduct->style}}">
                             </a>
                         </div>
-                        <div class="lg-image">
+                        <!-- <div class="lg-image">
                             <a class="popup-img venobox vbox-item" href="images/product/large-size/2.jpg')}}"
                                 data-gall="myGallery">
                                 <img src="{{asset('assets/client/images/product/large-size/2.jpg')}}"
@@ -60,9 +60,9 @@ Trang chi tiet
                                 <img src="{{asset('assets/client/images/product/large-size/6.jpg')}}"
                                     alt="product image">
                             </a>
-                        </div>
+                        </div> -->
                     </div>
-                    <div class="product-details-thumbs slider-thumbs-1 mt-60">
+                    <!-- <div class="product-details-thumbs slider-thumbs-1 mt-60">
                         <div class="sm-image"><img src="../upload/product/{{$singleProduct->url}}"
                                 alt="product image thumb">
                         </div>
@@ -81,7 +81,7 @@ Trang chi tiet
                         <div class="sm-image"><img src="{{asset('assets/client/images/product/small-size/6.jpg')}}"
                                 alt="product image thumb">
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <!--// Product Details Left -->
             </div>
@@ -91,7 +91,7 @@ Trang chi tiet
                 <div class="product-details-view-content pt-60">
                     <div class="product-info">
                         <h2>{{$singleProduct->name}}</h2>
-                        <span class="product-details-ref">Reference: demo_15</span>
+                        <!-- <span class="product-details-ref">Ten shop</span> -->
                         <div class="rating-box pt-20">
                             <ul class="rating rating-with-review-item">
                                 <li><i class="fa fa-star"></i></li>
@@ -123,7 +123,7 @@ Trang chi tiet
                                         <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
                                     </div>
                                 </div>
-                                <button class="add-to-cart" type="submit">Thêm vào giỏ hàng</button>
+                                <button class="add-to-cart" type="submit">MUA NGAY</button>
                             </form>
                         </div>
                         <div class="product-additional-info pt-25">
@@ -314,7 +314,7 @@ Trang chi tiet
     <div class="container">
         <div class="row">
             <!-- Begin Li's Section Area -->
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 <div class="li-section-title">
                     <h2>
                         <span>Sản phẩm cùng loại</span>
@@ -329,7 +329,7 @@ Trang chi tiet
                                 <div class="product-image">
                                     <a href="{{route('client.detail',['id'=>$reProduct->id])}}">
                                         <img src="../upload/product/{{$reProduct->url}}" alt="Li's Product Image"
-                                            style="{{$reProduct->style}}">
+                                            >
                                     </a>
                                     <span class="sticker">New</span>
                                 </div>
@@ -337,7 +337,7 @@ Trang chi tiet
                                     <div class="product_desc_info">
                                         <div class="product-review">
                                             <h5 class="manufacturer">
-                                                <a href="{{route('client.detail')}}">Graphic Corner</a>
+                                                <a href="{{route('client.detail')}}">Ten shop</a>
                                             </h5>
                                             <div class="rating-box">
                                                 <ul class="rating">

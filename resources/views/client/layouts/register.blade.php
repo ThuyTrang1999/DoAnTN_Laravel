@@ -20,7 +20,7 @@
                                     <div class="login-form">
 
                                         <div class="row">
-                                            <div class="col-md-6 col-12 mb-20">
+                                            <div class="col-md-12 col-12 mb-20">
                                                 <label>Họ tên(*)</label>
                                                 <input class="mb-0" type="text" name="cus_name"
                                                     placeholder="First Name">
@@ -37,11 +37,7 @@
                                                 <input class="mb-0" type="phone" name="cus_phone"
                                                     placeholder="Email Address">
                                             </div>
-                                            <div class="col-md-6 mb-20">
-                                                <label>Hình đại diện</label>
-                                                <input type="file" name="Avatar" style="border: none;">
-                                                <!-- <img src="#" alt="Ảnh đại diện"> -->
-                                            </div>
+                                            
                                             <div class="col-md-12 mb-20">
                                                 <label>Email</label>
                                                 <input class="mb-0" type="email" name="cus_email"

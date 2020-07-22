@@ -89,6 +89,23 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
 	});
 	$(".related").owlCarousel({
 		loop: false,
+		responsive: {
+			0: {
+					items: 1
+			},
+			480: {
+					items: 2
+			},
+			768: {
+					items: 3
+			},
+			992: {
+					items: 4
+			},
+			1200: {
+					items: 5
+			}
+		}
 		
 	});
 	

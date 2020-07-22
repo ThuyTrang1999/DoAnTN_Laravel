@@ -44,8 +44,34 @@
     <script src="{{asset('assets/client/js/main.js')}}"></script>
     <script src=”https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js”></script>
     <script>
-        new WOW().init();
+new WOW().init();
     </script>
-<a id="scrollUp" href="#top" style="position: fixed; z-index: 2147483647;"><i class="fa fa-angle-double-up"></i></a>
+    <a id="scrollUp" href="#top" style="position: fixed; z-index: 2147483647;"><i class="fa fa-angle-double-up"></i></a>
 
-    
+    <!-- JavaScript -->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+    <!-- Semantic UI theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css" />
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
+
+    <script type="text/javascript">
+function AddCart(id) {
+    // console.log(id);
+    $.ajax({
+        url: 'them-san-pham/' + id,
+        type: 'GET',
+    }).done(function(response) {
+        $("#change-item-cart").empty();
+        $("#change-item-cart").html(response);
+        console.log(response);
+        // alertify.success('Thêm Sách Thành Công');
+
+    });
+}
+    </script>
